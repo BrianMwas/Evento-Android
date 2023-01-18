@@ -22,7 +22,8 @@ gradlePlugin {
 object Versions {
     const val Gradle = "7.2.2"
     const val KtLint = "10.2.1"
-    const val Kotlin = "1.6.0"
+    const val Hilt = "2.44"
+    const val Kotlin = "1.7.20"
     const val Spotless = "6.4.2"
     const val Detekt = "1.20.0-RC2"
 }

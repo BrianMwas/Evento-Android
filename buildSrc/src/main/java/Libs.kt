@@ -1,5 +1,4 @@
-object Libs {
-}
+
 
 object SupportLibs {
     const val CoreKtx = "androidx.core:core-ktx:${Versions.coreKtx}"
@@ -9,4 +8,49 @@ object SupportLibs {
     const val CoroutineAndroid = "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4"
     const val LifecycleRuntime = "androidx.lifecycle:lifecycle-runtime-ktx:2.5.1"
     const val ActivityKtx = "androidx.activity:activity-ktx:1.6.1"
+}
+
+object ComposeLibs {
+    const val Bom = "androidx.compose:compose-bom:${Versions.composeBom}"
+    const val UI = "androidx.compose.ui:ui"
+    const val Activity = "androidx.activity:activity-compose:${Versions.composeActivity}"
+    const val Material = "androidx.compose.material:material"
+    const val Runtime = "androidx.compose.runtime:runtime"
+    const val Foundation = "androidx.compose.foundation:foundation"
+    const val ConstraintLayout = "androidx.constraintlayout:constraintlayout-compose"
+    const val MaterialIcons = "androidx.compose.material:material-icons-core"
+    const val MaterialExtended = "androidx.compose.material:material-icons-extended"
+    const val WindowSize = "androidx.compose.material3:material3-window-size-class"
+    const val ViewModel = "androidx.lifecycle:lifecycle-viewmodel-compose:${Versions.composeLifecycleViewModel}"
+    const val UITooling = "androidx.compose.ui:ui-tooling"
+    const val Manifest = "androidx.compose.ui:ui-test-manifest"
+    const val Preview = "androidx.compose.ui:ui-tooling-preview"
+    const val Coil = "io.coil-kt:coil-compose:${Versions.coil}"
+}
+
+object NavigationLib {
+    const val DestinationCore = "io.github.raamcosta.compose-destinations:core:${Versions.destination}"
+    const val DestinationAnimation = "io.github.raamcosta.compose-destinations:animations-core:${Versions.destination}"
+    const val DestinationKsp = "io.github.raamcosta.compose-destinations:ksp:${Versions.destination}"
+    const val Navigation = "androidx.navigation:navigation-compose"
+}
+
+object AccompanistLib {
+    const val SystemUIController = "com.google.accompanist:accompanist-systemuicontroller:${Versions.accompanistSystUiController}"
+}
+
+object DaggerHilt {
+    const val Android = "com.google.dagger:hilt-android:${Versions.hilt}"
+    const val Compiler = "com.google.dagger:hilt-android-compiler:${Versions.hilt}"
+    const val Compose = "androidx.hilt:hilt-navigation-compose:${Versions.compose}"
+}
+
+object TestingLib {
+    const val JUnit = "junit:junit:4.13.2"
+}
+
+object AndroidTestLib {
+    const val JUnitCompose = "androidx.compose.ui:ui-test-junit4:${Versions.compose}"
+    const val UITest = "androidx.compose.ui:ui-test-manifest"
+    const val EspressoCore = "androidx.test.espresso:espresso-core:${Versions.espresso}"
 }

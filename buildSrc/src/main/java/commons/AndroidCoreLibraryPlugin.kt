@@ -7,10 +7,12 @@ import com.android.build.gradle.LibraryExtension
 import org.gradle.api.JavaVersion
 import org.gradle.kotlin.dsl.get
 import org.gradle.kotlin.dsl.getByType
+import org.jetbrains.kotlin.gradle.model.KotlinAndroidExtension
 
 class AndroidCoreLibraryPlugin: Plugin<Project> {
     override fun apply(target: Project) {
         target.applyPlugins()
+        target.configureAndroid()
     }
 
     private fun Project.applyPlugins() {
@@ -19,6 +21,7 @@ class AndroidCoreLibraryPlugin: Plugin<Project> {
         plugins.apply("com.google.devtools.ksp")
         plugins.apply("org.jetbrains.kotlin.kapt")
     }
+
 
     private fun Project.configureAndroid() = extensions.getByType(LibraryExtension::class).run {
         compileSdk = ConfigData.compileSdkVersion
@@ -32,5 +35,9 @@ class AndroidCoreLibraryPlugin: Plugin<Project> {
             sourceCompatibility = JavaVersion.VERSION_1_8
             targetCompatibility = JavaVersion.VERSION_1_8
         }
+    }
+
+    private fun BuildType.buildConfigStringField(name: String, value: String) {
+        this.buildConfigField("String", name, "\"$value\"")
     }
 }

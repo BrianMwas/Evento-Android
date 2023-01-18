@@ -15,6 +15,6 @@ fun Home() {
         modifier = Modifier.fillMaxSize(),
         color = MaterialTheme.colors.background
     ) {
-        Text(text ="Hello Brian")
+        Text(text ="Hello Maxwell")
     }
 }
