@@ -114,6 +114,9 @@ val DependencyHandler.FEATURE_TICKETS
 val DependencyHandler.FEATURE_PROFILE
     get() = implementation(project(mapOf("path" to ":feature:profile")))
 
+val DependencyHandler.PROVIDER
+    get() = implementation(project(mapOf("path" to ":common:provider")))
+
 val DependencyHandler.THEME
     get() = implementation(project(mapOf("path" to ":common:theme")))
 

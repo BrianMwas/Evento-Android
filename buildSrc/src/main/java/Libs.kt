@@ -22,9 +22,9 @@ object ComposeLibs {
     const val MaterialExtended = "androidx.compose.material:material-icons-extended"
     const val WindowSize = "androidx.compose.material3:material3-window-size-class"
     const val ViewModel = "androidx.lifecycle:lifecycle-viewmodel-compose:${Versions.composeLifecycleViewModel}"
-    const val UITooling = "androidx.compose.ui:ui-tooling"
-    const val Manifest = "androidx.compose.ui:ui-test-manifest"
-    const val Preview = "androidx.compose.ui:ui-tooling-preview"
+    const val UITooling = "androidx.compose.ui:ui-tooling:${Versions.composeTooling}"
+    const val Manifest = "androidx.compose.ui:ui-test-manifest:${Versions.composeTooling}"
+    const val Preview = "androidx.compose.ui:ui-tooling-preview:${Versions.composeTooling}"
     const val Coil = "io.coil-kt:coil-compose:${Versions.coil}"
 }
 
@@ -42,7 +42,7 @@ object AccompanistLib {
 object DaggerHilt {
     const val Android = "com.google.dagger:hilt-android:${Versions.hilt}"
     const val Compiler = "com.google.dagger:hilt-android-compiler:${Versions.hilt}"
-    const val Compose = "androidx.hilt:hilt-navigation-compose:${Versions.compose}"
+    const val Compose = "androidx.hilt:hilt-navigation-compose:${Versions.hiltCompose}"
 }
 
 object TestingLib {

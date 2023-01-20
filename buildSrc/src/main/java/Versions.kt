@@ -14,6 +14,8 @@ object Versions {
     const val coil = "2.2.2"
     const val accompanist = "0.28.0"
     const val compose = "1.3.2"
+    const val composeTooling = "1.3.3"
+    const val hiltCompose = "1.0.0"
     const val destination = "1.7.32-beta"
     const val accompanistSystUiController = "0.29.0-alpha"
     const val hilt = "2.44"

@@ -10,4 +10,9 @@ plugins {
 dependencies {
     THEME
     addNavigationDependency()
+
+    // Dagger hilt
+    implementation(DaggerHilt.Android)
+    kapt(DaggerHilt.Compiler)
+    implementation(DaggerHilt.Compose)
 }
