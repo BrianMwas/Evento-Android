@@ -71,10 +71,10 @@ fun DependencyHandler.addComposeDependency() {
     implementation(ComposeLibs.ViewModel)
     implementation(ComposeLibs.Preview)
     implementation(AccompanistLib.SystemUIController)
-
-    debugImplementation(ComposeLibs.UITooling)
+    implementation(ComposeLibs.UITooling)
     androidTestImplementation(AndroidTestLib.JUnitCompose)
     debugImplementation(ComposeLibs.Manifest)
+
 }
 
 fun DependencyHandler.addNavigationDependency() {
@@ -97,6 +97,8 @@ fun DependencyHandler.addModuleDependency() {
     implementation(project(mapOf("path" to ":feature:profile")))
     implementation(project(mapOf("path" to ":common:theme")))
     implementation(project(mapOf("path" to ":libraries:testutils")))
+    implementation(project(mapOf("path" to ":libraries:framework")))
+    implementation(project(mapOf("path" to ":common:provider")))
 }
 
 val DependencyHandler.FEATURE_AUTHENTICATION
@@ -116,6 +118,10 @@ val DependencyHandler.FEATURE_PROFILE
 
 val DependencyHandler.PROVIDER
     get() = implementation(project(mapOf("path" to ":common:provider")))
+
+val DependencyHandler.FRAMEWORK
+    get() = implementation(project(mapOf("path" to ":libraries:framework")))
+
 
 val DependencyHandler.THEME
     get() = implementation(project(mapOf("path" to ":common:theme")))

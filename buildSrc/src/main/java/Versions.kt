@@ -21,5 +21,6 @@ object Versions {
     const val hilt = "2.44"
     const val composeActivity = "1.6.1"
     const val composeLifecycleViewModel = "2.5.1"
+    const val dataStore = "1.0.0"
 }
 

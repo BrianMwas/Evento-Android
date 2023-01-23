@@ -61,6 +61,7 @@ android.applicationVariants.all {
 }
 
 dependencies {
+    implementation(project(mapOf("path" to ":common:provider")))
     // Module Dependencies
     addModuleDependency()
     // Common
