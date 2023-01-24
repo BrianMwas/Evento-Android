@@ -99,6 +99,7 @@ fun DependencyHandler.addModuleDependency() {
     implementation(project(mapOf("path" to ":libraries:testutils")))
     implementation(project(mapOf("path" to ":libraries:framework")))
     implementation(project(mapOf("path" to ":common:provider")))
+    implementation(project(mapOf("path" to ":libraries:eventoframework")))
 }
 
 val DependencyHandler.FEATURE_AUTHENTICATION
@@ -125,6 +126,7 @@ val DependencyHandler.FRAMEWORK
 
 val DependencyHandler.THEME
     get() = implementation(project(mapOf("path" to ":common:theme")))
+
 
 val DependencyHandler.TEST
     get() = implementation(project(mapOf("path" to ":libraries:testutils")))
