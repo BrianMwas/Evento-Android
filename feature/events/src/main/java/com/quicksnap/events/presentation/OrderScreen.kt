@@ -1,21 +1,17 @@
-package com.quicksnap.authentication.signup
+package com.quicksnap.events.presentation
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
-import com.quicksnap.authentication.navgraph.AuthNavGraph
 import com.ramcosta.composedestinations.annotation.Destination
-import com.ramcosta.composedestinations.annotation.RootNavGraph
 
-
-@AuthNavGraph(start = true)
-@Destination(start = true)
+@Destination
 @Composable
-fun SignUpScreen() {
+fun OrderScreen() {
     Surface {
         Column {
-           Text(text = "Sign up screen") 
+            Text(text = "Order screen")
         }
     }
 }

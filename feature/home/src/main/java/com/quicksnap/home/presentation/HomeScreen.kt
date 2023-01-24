@@ -13,7 +13,7 @@ import com.ramcosta.composedestinations.annotation.RootNavGraph
 @RootNavGraph(start = true)
 @Destination
 @Composable
-fun Home() {
+fun HomeScreen() {
     // A surface container using the 'background' color from the theme
     Surface(
         modifier = Modifier.fillMaxSize(),
