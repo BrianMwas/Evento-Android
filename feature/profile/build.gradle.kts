@@ -7,6 +7,11 @@ plugins {
     id("com.google.devtools.ksp")
 }
 
+ksp {
+    arg("compose-destinations.mode", "navgraphs")
+    arg("compose-destinations.moduleName", "profile")
+}
+
 dependencies {
     THEME
     addNavigationDependency()
