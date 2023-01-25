@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Evento</string>
+    <string name="pref_default_theme_value">DefaultTheme</string>
+    <string name="pref_light_mode_value">light_mode</string>
+    <string name="dark_mode_value">dark_mode</string>
+    <string name="system_mode_value">system_mode</string>
 </resources>

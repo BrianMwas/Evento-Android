@@ -94,7 +94,9 @@ fun DependencyHandler.addModuleDependency() {
     implementation(project(mapOf("path" to ":feature:home")))
     implementation(project(mapOf("path" to ":feature:onboarding")))
     implementation(project(mapOf("path" to ":feature:tickets")))
+    implementation(project(mapOf("path" to ":domain")))
     implementation(project(mapOf("path" to ":feature:profile")))
+    implementation(project(mapOf("path" to ":feature:welcome")))
     implementation(project(mapOf("path" to ":common:theme")))
     implementation(project(mapOf("path" to ":libraries:testutils")))
     implementation(project(mapOf("path" to ":libraries:framework")))
@@ -123,6 +125,11 @@ val DependencyHandler.PROVIDER
 val DependencyHandler.FRAMEWORK
     get() = implementation(project(mapOf("path" to ":libraries:framework")))
 
+val DependencyHandler.DOMAIN
+    get() = implementation(project(mapOf("path" to ":domain")))
+
+val DependencyHandler.REPOSITORY
+    get() = implementation(project(mapOf("path" to ":data:repository")))
 
 val DependencyHandler.THEME
     get() = implementation(project(mapOf("path" to ":common:theme")))

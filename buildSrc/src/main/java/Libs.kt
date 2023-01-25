@@ -8,6 +8,7 @@ object SupportLibs {
     const val CoroutineAndroid = "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4"
     const val LifecycleRuntime = "androidx.lifecycle:lifecycle-runtime-ktx:2.5.1"
     const val ActivityKtx = "androidx.activity:activity-ktx:1.6.1"
+    const val Splashscreen = "androidx.core:core-splashscreen:1.0.0"
     const val DataStore = "androidx.datastore:datastore-preferences:${Versions.dataStore}"
 }
 
