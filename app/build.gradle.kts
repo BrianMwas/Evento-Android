@@ -5,7 +5,7 @@ plugins {
     id("org.jetbrains.kotlin.android")
     kotlin("kapt")
     id("com.google.dagger.hilt.android")
-
+    id("com.google.devtools.ksp")
 }
 
 android {
@@ -68,7 +68,12 @@ dependencies {
     // Compose
     addComposeDependency()
 
+    // Navigation deps
+    addNavigationDependency()
+
     implementation(DaggerHilt.Android)
+    implementation(DaggerHilt.Compose)
+
     kapt(DaggerHilt.Compiler)
 }
 

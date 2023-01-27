@@ -7,10 +7,10 @@ plugins {
     id("com.google.devtools.ksp")
 }
 
-//ksp {
-//    arg("compose-destinations.mode", "navgraphs")
-//    arg("compose-destinations.moduleName", "home")
-//}
+ksp {
+    arg("compose-destinations.mode", "navgraphs")
+    arg("compose-destinations.moduleName", "home")
+}
 
 dependencies {
     THEME
