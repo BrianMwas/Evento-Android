@@ -126,6 +126,9 @@ val DependencyHandler.PROVIDER
 val DependencyHandler.FRAMEWORK
     get() = implementation(project(mapOf("path" to ":libraries:framework")))
 
+val DependencyHandler.EVENTOFRAMEWORK
+    get() = implementation(project(mapOf("path" to ":libraries:eventoframework")))
+
 val DependencyHandler.DOMAIN
     get() = implementation(project(mapOf("path" to ":domain")))
 

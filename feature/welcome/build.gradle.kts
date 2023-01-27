@@ -1,3 +1,5 @@
+import extensions.EVENTOFRAMEWORK
+import extensions.FRAMEWORK
 import extensions.THEME
 import extensions.addNavigationDependency
 
@@ -10,6 +12,8 @@ plugins {
 
 dependencies {
     THEME
+    FRAMEWORK
+    EVENTOFRAMEWORK
     addNavigationDependency()
 
     // Dagger hilt
