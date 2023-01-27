@@ -20,7 +20,7 @@ fun StartScreen() {
     Surface {
         Column {
             Card(modifier = Modifier.padding(16.dp), backgroundColor = CardBackgroundDark) {
-                Text(text = "Hello World amazing")
+                Text(text = "Hello World amazing nice")
             }
         }
     }

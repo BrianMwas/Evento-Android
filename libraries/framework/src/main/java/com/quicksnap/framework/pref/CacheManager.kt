@@ -7,6 +7,7 @@ import com.quicksnap.framework.extension.fromJson
 import com.quicksnap.framework.extension.fromJsonList
 import com.quicksnap.framework.extension.toJson
 
+@Suppress("UNCHECKED_CAST")
 class CacheManager (private val context: Context, private val prefFileName: String? = null) {
     private val prefs: SharedPreferences = context.getPrefs(
         prefFileName ?: context.getDefaultSharedPrefName()

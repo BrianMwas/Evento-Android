@@ -26,6 +26,7 @@ object Versions {
     const val Kotlin = "1.7.20"
     const val Spotless = "6.4.2"
     const val Detekt = "1.20.0-RC2"
+    const val JavaPoet = "1.13.0"
 }
 
 object Deps {
@@ -34,6 +35,7 @@ object Deps {
     const val KtLint = "org.jlleitschuh.gradle:ktlint-gradle:${Versions.KtLint}"
     const val Spotless = "com.diffplug.spotless:spotless-plugin-gradle:${Versions.Spotless}"
     const val Detekt = "io.gitlab.arturbosch.detekt:detekt-gradle-plugin:${Versions.Detekt}"
+    const val JavaPoet = "com.squareup:javapoet:${Versions.JavaPoet}"
 }
 
 dependencies {
@@ -42,4 +44,5 @@ dependencies {
     implementation(Deps.Detekt)
     implementation(Deps.Gradle)
     implementation(Deps.Kotlin)
+    implementation(Deps.JavaPoet)
 }

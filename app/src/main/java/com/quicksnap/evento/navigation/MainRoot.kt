@@ -34,9 +34,8 @@ fun MainRoot(
         }
     }
 
-    EventoTheme {
+    EventoTheme(darkTheme = isDarkMode) {
         SetupSystemUIController(systemUiController = rememberSystemUiController(), systemColor = Primary)
-
         Surface(modifier = Modifier.fillMaxSize()) {
             DestinationsNavHost(
                 navController = navController,

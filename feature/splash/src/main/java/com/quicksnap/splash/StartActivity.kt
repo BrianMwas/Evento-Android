@@ -41,7 +41,7 @@ class StartActivity: FragmentActivity() {
     private fun navigateWelcomeActivity() {
         launchActivity(
             packageName = packageName,
-            className = "com.quicksnap.evento.welcome.WelcomeActivity"
+            className = "com.quicksnap.welcome.welcome.WelcomeActivity"
         ).also {
             finish()
         }

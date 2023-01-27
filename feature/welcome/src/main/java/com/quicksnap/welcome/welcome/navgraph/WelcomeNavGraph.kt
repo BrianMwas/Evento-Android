@@ -12,7 +12,11 @@ fun WelcomeNavGraph() {
     val navController = rememberNavController()
     NavHost(navController = navController, startDestination = WelcomeScreen.OnBoarding.route) {
         composable(route = WelcomeScreen.OnBoarding.route) {
-            OnBoardingScreen()
+            OnBoardingScreen(
+                toWelcomeScreen = {
+                    navController.navigate(WelcomeScreen.Start.route)
+                }
+            )
         }
         composable(route = WelcomeScreen.Start.route) {
             StartScreen()

@@ -4,12 +4,8 @@ import extensions.addNavigationDependency
 plugins {
     id("commons.android-feature")
     id("commons.android-comp")
+    id("commons.dagger-hilt")
     id("com.google.devtools.ksp")
-}
-
-ksp {
-    arg("compose-destinations.mode", "navgraphs")
-    arg("compose-destinations.moduleName", "welcome")
 }
 
 dependencies {

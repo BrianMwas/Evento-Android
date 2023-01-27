@@ -101,6 +101,7 @@ fun DependencyHandler.addModuleDependency() {
     implementation(project(mapOf("path" to ":libraries:testutils")))
     implementation(project(mapOf("path" to ":libraries:framework")))
     implementation(project(mapOf("path" to ":common:provider")))
+    implementation(project(mapOf("path" to ":feature:splash")))
     implementation(project(mapOf("path" to ":libraries:eventoframework")))
 }
 
