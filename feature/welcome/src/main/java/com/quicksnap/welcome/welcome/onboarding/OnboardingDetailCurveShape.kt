@@ -27,9 +27,9 @@ class OnboardingDetailCurveShape: Shape {
             val height = size.height
             val width = size.width
             moveTo(0f, 0.35f * height)
-            cubicTo(0f, 0.52f * height, 0.01f, 0.31f * height, 0.055f * width, 0.3f * height)
-            lineTo(0.9f * width, 0.05f * height)
-            cubicTo(width, 0.05f * height, 0.94f*width, -0.01f * height, width, 0.02f * height)
+            cubicTo(0f, 0.33f * height, 0.01f * width, 0.31f * height, 0.05f * width, 0.3f * height)
+            lineTo(0.89f * width, 0.006f * height)
+            cubicTo(width * 0.92f, -0.001f * height, width, 0.02f * height, width, 0.07f * height)
             lineTo(width, height)
             lineTo(0f, height)
             lineTo(0f, 0.35f * height)

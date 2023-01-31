@@ -31,7 +31,7 @@ val navigationBackIconDark = Black
 val navigationBackIconLight = White
 
 val CardBackgroundLight = White
-val CardBackgroundDark = AccentDark
+val CardBackgroundDark = PrimaryDark
 
 //val Color.navigationBackIconColor
 //    @Composable get() = if (isLight) Black else White

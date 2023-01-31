@@ -39,6 +39,8 @@ object NavigationLib {
 
 object AccompanistLib {
     const val SystemUIController = "com.google.accompanist:accompanist-systemuicontroller:${Versions.accompanistSystUiController}"
+    const val Pager = "com.google.accompanist:accompanist-pager:${Versions.accompanistPager}"
+    const val PagerIndicators = "com.google.accompanist:accompanist-pager-indicators:${Versions.accompanistPager}"
 }
 
 object DaggerHilt {

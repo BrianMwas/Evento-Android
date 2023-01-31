@@ -22,5 +22,6 @@ object Versions {
     const val composeActivity = "1.6.1"
     const val composeLifecycleViewModel = "2.5.1"
     const val dataStore = "1.0.0"
+    const val accompanistPager = "0.29.1-alpha"
 }
 
