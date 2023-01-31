@@ -21,9 +21,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.google.accompanist.pager.*
-import com.quicksnap.theme.LightGray
-import com.quicksnap.theme.Primary
-import com.quicksnap.theme.White
+import com.quicksnap.theme.*
 import com.quicksnap.welcome.R
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
@@ -85,7 +83,7 @@ fun OnBoardingDetail(
                 shape = OnboardingDetailCurveShape()
                 clip = true
             }
-            .background(MaterialTheme.colors.surface)
+            .background(EventoColors.surface)
         ) {
             Column(
                 modifier = Modifier
@@ -94,7 +92,7 @@ fun OnBoardingDetail(
             ) {
                 HorizontalPagerIndicator(
                     pagerState = state,
-                    inactiveColor = MaterialTheme.colors.secondary,
+                    inactiveColor = EventoColors.secondary,
                     activeColor = Primary,
                     modifier = Modifier.padding(top = 42.dp, bottom = 16.dp, start = 44.dp)
                 )
@@ -153,11 +151,11 @@ fun OnBoardingDetailFeature(
             .padding(horizontal = 42.dp),
         horizontalAlignment = Alignment.Start,
     ) {
-        Text(text = title, style = MaterialTheme.typography.h2.copy(color = Primary, fontWeight = FontWeight.Bold))
+        Text(text = title, style = EventoTypography.h2.copy(color = Primary, fontWeight = FontWeight.Bold))
         Spacer(modifier = Modifier.height(12.dp))
         Text(
             text = subtitle,
-            style = MaterialTheme.typography.body1
+            style = EventoTypography.body1
         )
         Row(
             modifier = Modifier
@@ -170,7 +168,7 @@ fun OnBoardingDetailFeature(
                     text = "SKIP",
                     style = MaterialTheme.typography.h5.copy(
                         fontWeight = FontWeight.Light,
-                        color = MaterialTheme.colors.secondary
+                        color = EventoColors.secondary
                     )
                 )
             }
