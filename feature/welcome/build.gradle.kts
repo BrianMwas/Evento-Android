@@ -24,4 +24,7 @@ dependencies {
     // Accompanist pager
     implementation(AccompanistLib.Pager)
     implementation(AccompanistLib.PagerIndicators)
+
+    // More icons
+    implementation(ComposeLibs.MaterialExtended)
 }

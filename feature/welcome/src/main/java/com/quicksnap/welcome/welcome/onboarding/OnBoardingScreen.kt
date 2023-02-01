@@ -72,7 +72,7 @@ fun OnBoardingDetail(
 ) {
     Box(
         modifier = modifier
-            .height(400.dp)
+            .height(420.dp)
             .fillMaxWidth()
             .background(Color.Transparent)
     ) {
@@ -121,7 +121,7 @@ fun OnBoardingDetail(
                         else -> {
                             OnBoardingDetailFeature(
                                 title = "Plan Ahead",
-                                subtitle = "Never have to worry about forgetting about an event we will remind you and save a spot for you.",
+                                subtitle = "Organise yourself and never miss any event with on time notifications.",
                                 skip = skip,
                                 coroutineScope = scope,
                                 state = state,
@@ -181,11 +181,11 @@ fun OnBoardingDetailFeature(
                         if (state.canScrollForward) {
                             state.scrollToPage(currentPage + 1)
                         } else {
-                            skip()
+                            skip.invoke()
                         }
                     }
                 }) {
-                Icon(Icons.Default.PlayArrow, contentDescription = "Forward", tint = White)
+                Icon(Icons.Default.ArrowForward, contentDescription = "Forward", tint = White)
             }
         }
     }
