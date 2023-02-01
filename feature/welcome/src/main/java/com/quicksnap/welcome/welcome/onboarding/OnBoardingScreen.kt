@@ -34,7 +34,7 @@ fun OnBoardingScreen(
     val pagerState = rememberPagerState()
     val scope = rememberCoroutineScope()
 
-    val images = arrayListOf(R.drawable.basketball_game, R.drawable.concert, R.drawable.concert_two)
+    val images = arrayListOf(R.drawable.conference, R.drawable.panel, R.drawable.concert_people)
     var currentImage by remember {
         mutableStateOf(0)
     }
