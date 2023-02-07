@@ -49,7 +49,10 @@ fun OnBoardingScreen(
             modifier = Modifier
                 .fillMaxSize(), contentAlignment = Alignment.BottomCenter
         ) {
-            Crossfade(targetState = currentImage, animationSpec = tween(durationMillis = 1000)) { current ->
+            Crossfade(
+                targetState = currentImage,
+                animationSpec = tween(durationMillis = 1000)
+            ) { current ->
                 Image(
                     painter = painterResource(images[current]),
                     contentScale = ContentScale.FillHeight,
@@ -151,7 +154,10 @@ fun OnBoardingDetailFeature(
             .padding(horizontal = 42.dp),
         horizontalAlignment = Alignment.Start,
     ) {
-        Text(text = title, style = EventoTypography.h2.copy(color = Primary, fontWeight = FontWeight.Bold))
+        Text(
+            text = title,
+            style = EventoTypography.h2.copy(color = Primary, fontWeight = FontWeight.Bold)
+        )
         Spacer(modifier = Modifier.height(12.dp))
         Text(
             text = subtitle,
@@ -161,28 +167,31 @@ fun OnBoardingDetailFeature(
             modifier = Modifier
                 .padding(top = 56.dp)
                 .fillMaxWidth(),
-            horizontalArrangement = Arrangement.SpaceBetween
+            horizontalArrangement = if(currentPage == 2) Arrangement.End else  Arrangement.SpaceBetween
         ) {
-            TextButton(onClick = skip) {
-                Text(
-                    text = "SKIP",
-                    style = MaterialTheme.typography.h5.copy(
-                        fontWeight = FontWeight.Light,
-                        color = EventoColors.secondary
+            if(currentPage < 2) {
+                TextButton(onClick = skip) {
+                    Text(
+                        text = "SKIP",
+                        style = MaterialTheme.typography.h5.copy(
+                            fontWeight = FontWeight.Light,
+                            color = EventoColors.secondary
+                        )
                     )
-                )
+                }
             }
+
             IconButton(
                 modifier = Modifier
                     .clip(CircleShape)
                     .background(Primary),
                 onClick = {
-                    coroutineScope.launch {
-                        if (state.canScrollForward) {
+                    if (currentPage < 2) {
+                        coroutineScope.launch {
                             state.scrollToPage(currentPage + 1)
-                        } else {
-                            skip.invoke()
                         }
+                    } else {
+                        skip()
                     }
                 }) {
                 Icon(Icons.Default.ArrowForward, contentDescription = "Forward", tint = White)
