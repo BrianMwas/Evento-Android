@@ -23,10 +23,10 @@ fun WelcomeNavGraph() {
         composable(route = Welcome.Start.route) {
             StartScreen(toLogin = {
                 navController.navigate(Welcome.Login.route)
-                navController.popBackStack()
+
             }, toSignUp = {
                 navController.navigate(Welcome.SignUp.route)
-                navController.popBackStack()
+
             })
         }
 

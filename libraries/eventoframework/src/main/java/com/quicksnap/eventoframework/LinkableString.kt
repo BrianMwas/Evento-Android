@@ -5,6 +5,7 @@ import androidx.compose.foundation.text.ClickableText
 import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontWeight
@@ -16,6 +17,8 @@ fun LinkableString(
     modifier: Modifier = Modifier,
     appendString: String,
     pushString: String,
+    appendColor: Color,
+    clickableTextColor: Color,
     annotationLink: String = "",
     onClick : () -> Unit
 ) {
@@ -25,11 +28,13 @@ fun LinkableString(
         withStyle(
             style = SpanStyle(
                 fontSize = 15.sp,
+                color = appendColor,
                 fontWeight = FontWeight.SemiBold
             ),
         ) {
             append(pushString)
         }
+
         pop()
     }
 
@@ -38,6 +43,7 @@ fun LinkableString(
         text = annotatedString,
         style = MaterialTheme.typography.body1.copy(
             fontSize = 15.sp,
+            color = clickableTextColor
         ),
         onClick = { offset ->
             annotatedString.getStringAnnotations(tag = pushString, start = offset, end = offset)
