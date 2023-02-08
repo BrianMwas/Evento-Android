@@ -42,6 +42,11 @@ val DarkTypography = Typography(
         color = White,
         fontSize = 15.sp
     ),
+    body2 = TextStyle(
+        fontFamily = NunitoSansFonts,
+        fontWeight = FontWeight.Normal,
+        color = White,
+    ),
     button = TextStyle(
         fontFamily = NunitoSansFonts,
         fontWeight = FontWeight.Bold,
@@ -50,7 +55,8 @@ val DarkTypography = Typography(
     ),
     caption = TextStyle(
         fontFamily = NunitoSansFonts,
-        fontSize = 13.sp
+        fontSize = 13.sp,
+        color = White,
     )
 )
 

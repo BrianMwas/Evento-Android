@@ -12,6 +12,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.toArgb
+import androidx.core.view.WindowCompat
 import androidx.fragment.app.FragmentActivity
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import com.quicksnap.eventoframework.SetupSystemUIController
@@ -26,6 +27,7 @@ import dagger.hilt.android.AndroidEntryPoint
 class WelcomeActivity: FragmentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        WindowCompat.setDecorFitsSystemWindows(window, false)
         setContent {
             WelcomeRoot()
         }
@@ -37,9 +39,9 @@ fun WelcomeRoot() {
     EventoTheme {
         val isDark = isSystemInDarkTheme()
         if (isDark) {
-            SetupSystemUIController(rememberSystemUiController(), EventoColors.primary)
+            SetupSystemUIController(rememberSystemUiController(), Color.Transparent)
         } else {
-            SetupSystemUIController(rememberSystemUiController(), systemColor = Color.White)
+            SetupSystemUIController(rememberSystemUiController(), Color.Transparent)
         }
 
         Surface(modifier = Modifier.fillMaxSize()) {

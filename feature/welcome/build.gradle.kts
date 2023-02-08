@@ -20,4 +20,11 @@ dependencies {
     implementation(DaggerHilt.Android)
     kapt(DaggerHilt.Compiler)
     implementation(DaggerHilt.Compose)
+
+    // Accompanist pager
+    implementation(AccompanistLib.Pager)
+    implementation(AccompanistLib.PagerIndicators)
+
+    // More icons
+    implementation(ComposeLibs.MaterialExtended)
 }
