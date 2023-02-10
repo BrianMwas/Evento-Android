@@ -1,3 +1,4 @@
+import extensions.PROVIDER
 import extensions.THEME
 import extensions.addNavigationDependency
 
@@ -14,5 +15,6 @@ ksp {
 
 dependencies {
     THEME
+    PROVIDER
     addNavigationDependency()
 }

@@ -18,6 +18,7 @@ val Accent = Color(0xFF8BDDCD)
 val PrimaryDark = Color(0xFF121933)
 val SecondaryDark = Color(0xFF495270)
 val AccentDark = Color(0xFF172F53)
+val PrimaryVariant = Color(0xFF00B69C);
 
 val Danger = Color(0xFFFF313D)
 val Warning = Color(0xFFFFA141)

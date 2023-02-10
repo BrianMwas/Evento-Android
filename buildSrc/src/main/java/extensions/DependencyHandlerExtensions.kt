@@ -94,6 +94,7 @@ fun DependencyHandler.addModuleDependency() {
     implementation(project(mapOf("path" to ":feature:home")))
     implementation(project(mapOf("path" to ":feature:onboarding")))
     implementation(project(mapOf("path" to ":feature:tickets")))
+    implementation(project(mapOf("path" to ":feature:events")))
     implementation(project(mapOf("path" to ":domain")))
     implementation(project(mapOf("path" to ":feature:profile")))
     implementation(project(mapOf("path" to ":feature:welcome")))
@@ -119,6 +120,9 @@ val DependencyHandler.FEATURE_TICKETS
 
 val DependencyHandler.FEATURE_PROFILE
     get() = implementation(project(mapOf("path" to ":feature:profile")))
+
+val DependencyHandler.FEATURE_EVENTS
+    get() = implementation(project(mapOf("path" to ":feature:events")))
 
 val DependencyHandler.PROVIDER
     get() = implementation(project(mapOf("path" to ":common:provider")))

@@ -1,6 +1,7 @@
 package com.quicksnap.welcome.welcome.navgraph
 
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.platform.LocalContext
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
@@ -31,15 +32,17 @@ fun WelcomeNavGraph() {
         }
 
         composable(route = Welcome.Login.route) {
-            LoginScreen {
+            LoginScreen( toSignUp = {
                 navController.navigate(Welcome.SignUp.route)
-            }
+            })
         }
 
         composable(route = Welcome.SignUp.route) {
-            SignUpScreen {
-                navController.navigate(Welcome.Login.route)
-            }
+            SignUpScreen(
+                toLogin = {
+                    navController.navigate(Welcome.Login.route)
+                }
+            )
         }
     }
 }

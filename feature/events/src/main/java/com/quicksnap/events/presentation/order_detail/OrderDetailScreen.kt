@@ -1,19 +1,20 @@
-package com.quicksnap.events.presentation
+package com.quicksnap.events.presentation.order_detail
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.hilt.navigation.compose.hiltViewModel
 import com.ramcosta.composedestinations.annotation.Destination
-import com.ramcosta.composedestinations.annotation.RootNavGraph
 
-@RootNavGraph(start = true)
 @Destination
 @Composable
-fun EventDetailsScreen() {
+fun OrderDetailScreen(
+    viewModel: OrderDetailViewModel = hiltViewModel()
+) {
     Surface {
         Column {
-            Text(text = "Event details screen")
+            Text(text = "Order screen")
         }
     }
 }

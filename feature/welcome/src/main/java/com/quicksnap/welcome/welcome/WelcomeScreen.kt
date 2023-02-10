@@ -37,12 +37,7 @@ class WelcomeActivity: FragmentActivity() {
 @Composable
 fun WelcomeRoot() {
     EventoTheme {
-        val isDark = isSystemInDarkTheme()
-        if (isDark) {
-            SetupSystemUIController(rememberSystemUiController(), Color.Transparent)
-        } else {
-            SetupSystemUIController(rememberSystemUiController(), Color.Transparent)
-        }
+        SetupSystemUIController(rememberSystemUiController(), Color.Transparent)
 
         Surface(modifier = Modifier.fillMaxSize()) {
             WelcomeNavGraph()

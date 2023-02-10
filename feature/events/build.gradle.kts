@@ -1,10 +1,11 @@
-import extensions.THEME
-import extensions.addComposeDependency
-import extensions.addNavigationDependency
+import extensions.*
+import org.gradle.kotlin.dsl.implementation
+import org.gradle.kotlin.dsl.kapt
 
 plugins {
     id("commons.android-feature")
     id("commons.android-comp")
+    id("commons.dagger-hilt")
     id("com.google.devtools.ksp")
 }
 
@@ -15,6 +16,12 @@ ksp {
 
 dependencies {
     THEME
+    EVENTOFRAMEWORK
+    PROVIDER
     addComposeDependency()
     addNavigationDependency()
+
+    implementation(DaggerHilt.Android)
+    kapt(DaggerHilt.Compiler)
+    implementation(DaggerHilt.Compose)
 }

@@ -1,6 +1,8 @@
 package com.quicksnap.welcome.welcome.onboarding
 
-import androidx.compose.animation.Crossfade
+import androidx.compose.animation.*
+import androidx.compose.animation.core.Spring
+import androidx.compose.animation.core.spring
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -75,7 +77,7 @@ fun OnBoardingDetail(
 ) {
     Box(
         modifier = modifier
-            .height(420.dp)
+            .height(380.dp)
             .fillMaxWidth()
             .background(Color.Transparent)
     ) {
@@ -83,15 +85,16 @@ fun OnBoardingDetail(
             .fillMaxSize()
             .graphicsLayer {
                 shadowElevation = 9.dp.toPx()
-                shape = OnboardingDetailCurveShape()
+                shape = TrapeziumShape()
                 clip = true
             }
-            .background(EventoColors.surface)
+            .background(EventoColors.surface),
         ) {
             Column(
                 modifier = Modifier
                     .fillMaxSize()
-                    .padding(top = 56.dp), verticalArrangement = Arrangement.Center
+                    .padding(top = 30.dp),
+                verticalArrangement = Arrangement.Center
             ) {
                 HorizontalPagerIndicator(
                     pagerState = state,
@@ -167,9 +170,9 @@ fun OnBoardingDetailFeature(
             modifier = Modifier
                 .padding(top = 56.dp)
                 .fillMaxWidth(),
-            horizontalArrangement = if(currentPage == 2) Arrangement.End else  Arrangement.SpaceBetween
+            horizontalArrangement = if (currentPage == 2) Arrangement.End else Arrangement.SpaceBetween
         ) {
-            if(currentPage < 2) {
+            if (currentPage < 2) {
                 TextButton(onClick = skip) {
                     Text(
                         text = "SKIP",
@@ -188,7 +191,7 @@ fun OnBoardingDetailFeature(
                 onClick = {
                     if (currentPage < 2) {
                         coroutineScope.launch {
-                            state.scrollToPage(currentPage + 1)
+                            state.animateScrollToPage(currentPage + 1)
                         }
                     } else {
                         skip()
