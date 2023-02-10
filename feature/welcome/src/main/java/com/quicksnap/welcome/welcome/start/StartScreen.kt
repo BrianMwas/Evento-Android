@@ -22,6 +22,7 @@ import com.quicksnap.eventoframework.LinkableString
 import com.quicksnap.theme.*
 import com.quicksnap.welcome.R
 import com.quicksnap.welcome.welcome.onboarding.OnboardingDetailCurveShape
+import com.quicksnap.welcome.welcome.onboarding.TrapeziumShape
 
 @Composable
 fun StartScreen(
@@ -49,62 +50,81 @@ fun WelcomeActionPane(
     toLogin: () -> Unit,
     toSignUp: () -> Unit,
 ) {
-    Box(
-        modifier = Modifier
-            .height(420.dp)
-            .fillMaxWidth()
-    ) {
+    BoxWithConstraints {
+        val boxWithConstraintsScope = this
+
+        // Calculate the height as per the current height
+        val calcHeight = if (boxWithConstraintsScope.maxHeight.value <= 800)
+            (boxWithConstraintsScope.constraints.maxHeight * 0.25).dp
+        else
+            (boxWithConstraintsScope.constraints.maxHeight * 0.18).dp
+
         Box(
             modifier = Modifier
-                .fillMaxSize()
-                .graphicsLayer {
-                    shadowElevation = 9.dp.toPx()
-                    clip = true
-                    shape = OnboardingDetailCurveShape()
-                }
-                .background(EventoColors.surface),
-            contentAlignment = Alignment.Center
+                .height(calcHeight)
+                .fillMaxWidth()
         ) {
-            Column(
-                modifier = Modifier.padding(horizontal = 32.dp),
-                horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.Center) {
-                Text(
-                    text = "Welcome",
-                    textAlign = TextAlign.Center,
-                    style = EventoTypography.h4,
-                    modifier = Modifier.padding(top = 56.dp)
-                )
-                Text(
-                    text = "Evento",
-                    textAlign = TextAlign.Center,
-                    style = EventoTypography.h1.copy(
-                        fontSize = 32.sp,
-                        fontFamily = FontFamily(
-                            Font(R.font.kanit_semibold, FontWeight.SemiBold)
-                        )
-                    ),
-                )
-                Text(text = "Discover events around you", textAlign = TextAlign.Center, style = EventoTypography.body2,)
-                Button(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(top = 52.dp),
-                    colors = ButtonDefaults.buttonColors(
-                        backgroundColor = Primary,
-                        contentColor = Color.White,
-                        disabledBackgroundColor = PrimaryDark
-                    ),
-                    contentPadding = PaddingValues(vertical = 12.dp),
-                    onClick = toSignUp,
+            Box(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .graphicsLayer {
+                        shadowElevation = 9.dp.toPx()
+                        clip = true
+                        shape = TrapeziumShape()
+                    }
+                    .background(EventoColors.surface),
+                contentAlignment = Alignment.Center
+            ) {
+                Column(
+                    modifier = Modifier.padding(horizontal = 32.dp),
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    verticalArrangement = Arrangement.Center
                 ) {
-                    Text(text = "Sign Up")
+                    Text(
+                        text = "Welcome",
+                        textAlign = TextAlign.Center,
+                        style = EventoTypography.h4.copy(
+                            fontWeight = FontWeight.Light
+                        ),
+                        modifier = Modifier.padding(top = 56.dp)
+                    )
+                    Text(
+                        text = "Evento",
+                        textAlign = TextAlign.Center,
+                        style = EventoTypography.h1.copy(
+                            fontSize = 32.sp,
+                            fontFamily = FontFamily(
+                                Font(R.font.kanit_semibold, FontWeight.SemiBold)
+                            )
+                        ),
+                    )
+                    Text(
+                        text = "Discover events around you",
+                        textAlign = TextAlign.Center,
+                        style = EventoTypography.body2,
+                    )
+                    Button(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(top = 52.dp, bottom = 52.dp),
+                        colors = ButtonDefaults.buttonColors(
+                            backgroundColor = Primary,
+                            contentColor = Color.White,
+                            disabledBackgroundColor = PrimaryDark
+                        ),
+                        contentPadding = PaddingValues(vertical = 12.dp),
+                        onClick = toSignUp,
+                    ) {
+                        Text(text = "Sign Up")
+                    }
+                    LinkableString(
+                        appendString = "Already a Member? ",
+                        pushString = "Login",
+                        onClick = toLogin,
+                        appendColor = Primary,
+                        clickableTextColor = Primary
+                    )
                 }
-                LinkableString(
-                    modifier = Modifier.padding(top = 16.dp),
-                    appendString = "Already a Member? ",
-                    pushString = "Login",
-                    onClick = toLogin,
-                )
             }
         }
     }
