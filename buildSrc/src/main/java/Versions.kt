@@ -23,5 +23,7 @@ object Versions {
     const val composeLifecycleViewModel = "2.5.1"
     const val dataStore = "1.0.0"
     const val accompanistPager = "0.29.1-alpha"
+    const val BarCode = "3.5.1"
+    const val cloudy = "0.1.2"
 }
 

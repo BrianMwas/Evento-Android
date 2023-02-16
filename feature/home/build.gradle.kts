@@ -17,5 +17,8 @@ dependencies {
     FEATURE_TICKETS
     FEATURE_PROFILE
     PROVIDER
+    EVENTOFRAMEWORK
+    implementation(ComposeLibs.Coil)
+    implementation(ComposeLibs.CoilBase)
     addNavigationDependency()
 }

@@ -124,6 +124,9 @@ val DependencyHandler.FEATURE_PROFILE
 val DependencyHandler.FEATURE_EVENTS
     get() = implementation(project(mapOf("path" to ":feature:events")))
 
+val DependencyHandler.QR_CODE
+    get() = implementation(project(mapOf("path" to ":libraries:qr")))
+
 val DependencyHandler.PROVIDER
     get() = implementation(project(mapOf("path" to ":common:provider")))
 

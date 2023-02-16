@@ -1,5 +1,6 @@
 package com.quicksnap.theme
 
+import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 
@@ -43,8 +44,8 @@ val CardBackgroundDark = PrimaryDark
 //val Color.backgroundColor
 //    @Composable get() = if (isLight) BackgroundLight else BackgroundDark
 //
-//val Color.cardBackground
-//    @Composable get() = if (isLight) CardBackgroundLight else CardBackgroundDark
+val Color.Companion.cardBackground
+    @Composable get() = if (!isSystemInDarkTheme()) CardBackgroundLight else CardBackgroundDark
 //
 //val Color.unselectedIconColor
 //    @Composable get() = if (isLight) unselectedBottomNavItemColorDark else White

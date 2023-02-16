@@ -4,9 +4,6 @@ import android.util.Log
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.Icon
-import androidx.compose.material.IconButton
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -14,7 +11,6 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
@@ -26,13 +22,14 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import com.quicksnap.eventoframework.LinkableString
 import com.quicksnap.framework.extension.getActivity
 import com.quicksnap.framework.extension.launchActivity
-import com.quicksnap.theme.*
+import com.quicksnap.theme.EventoColors
+import com.quicksnap.theme.EventoTypography
+import com.quicksnap.theme.Primary
 import com.quicksnap.welcome.R
 import com.quicksnap.welcome.welcome.authentication.AuthenticationEvent
 import com.quicksnap.welcome.welcome.authentication.AuthenticationViewModel
 import com.quicksnap.welcome.welcome.authentication.common.SocialAuth
 import com.quicksnap.welcome.welcome.authentication.login.components.LoginForm
-import com.quicksnap.welcome.welcome.onboarding.OnboardingDetailCurveShape
 import com.quicksnap.welcome.welcome.onboarding.TrapeziumShape
 
 @Composable

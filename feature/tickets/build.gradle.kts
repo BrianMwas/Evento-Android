@@ -1,11 +1,11 @@
-import extensions.PROVIDER
-import extensions.THEME
-import extensions.addNavigationDependency
+import extensions.*
+import org.gradle.kotlin.dsl.implementation
 
 plugins {
     id("commons.android-feature")
     id("commons.android-comp")
     id("com.google.devtools.ksp")
+    id("org.jetbrains.kotlin.android")
 }
 
 ksp {
@@ -16,5 +16,10 @@ ksp {
 dependencies {
     THEME
     PROVIDER
+    QR_CODE
+    FEATURE_EVENTS
+    /// Generate a bar code
+    implementation(ComposeLibs.BarCode)
+
     addNavigationDependency()
 }

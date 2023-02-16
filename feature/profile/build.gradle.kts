@@ -1,3 +1,4 @@
+import extensions.EVENTOFRAMEWORK
 import extensions.PROVIDER
 import extensions.THEME
 import extensions.addNavigationDependency
@@ -16,5 +17,8 @@ ksp {
 dependencies {
     THEME
     PROVIDER
+    EVENTOFRAMEWORK
+    implementation(ComposeLibs.Blur)
+    implementation(ComposeLibs.MaterialExtended)
     addNavigationDependency()
 }

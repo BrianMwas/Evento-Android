@@ -1,15 +1,24 @@
 package com.quicksnap.tickets.presentation
 
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.LazyRow
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import com.quicksnap.events.presentation.list.components.EventCard
 import com.quicksnap.provider.NavigationProvider
 import com.quicksnap.theme.EventoColors
-import com.ramcosta.composedestinations.annotation.Destination
+import com.quicksnap.theme.EventoTypography
+import com.quicksnap.theme.Primary
+import com.quicksnap.tickets.presentation.components.UpcomingTicketCard
+import java.util.*
 
 @OptIn(ExperimentalMaterialApi::class)
 @Composable
@@ -20,11 +29,74 @@ fun TicketListScreen(
         initialValue = ModalBottomSheetValue.Hidden,
         confirmStateChange = { it != ModalBottomSheetValue.Expanded },
         skipHalfExpanded = true
-        ),
+    ),
 ) {
-    Box(modifier = modifier.background(EventoColors.background)) {
-        Column {
-            Text(text = "Tickets")
+    Box(
+        modifier = modifier
+            .background(EventoColors.background)
+            .statusBarsPadding()
+    ) {
+        Column(
+            modifier = Modifier
+                .navigationBarsPadding()
+                .padding(top = 50.dp)
+                .verticalScroll(rememberScrollState())
+        ) {
+
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(bottom = 32.dp),
+                horizontalArrangement = Arrangement.Center
+            ) {
+                Text(
+                    text = "Your Order",
+                    textAlign = TextAlign.Center,
+                    style = EventoTypography.h4
+                )
+            }
+            Text(
+                text = "Upcoming",
+                style = EventoTypography.h6.copy(
+                    color = Primary,
+                    fontSize = 14.sp,
+                    fontWeight = FontWeight.Bold
+                ),
+                modifier = Modifier.padding(horizontal = 32.dp)
+            )
+            Spacer(modifier = Modifier.height(16.dp))
+            UpcomingTicketCard()
+            UpcomingTicketCard()
+            Spacer(modifier = Modifier.height(6.dp))
+            Text(
+                text = "History",
+                style = EventoTypography.h6.copy(
+                    color = Primary,
+                    fontSize = 14.sp,
+                    fontWeight = FontWeight.Bold
+                ),
+                modifier = Modifier.padding(horizontal = 32.dp)
+            )
+            Spacer(modifier = Modifier.height(6.dp))
+            LazyRow(modifier = Modifier.padding(vertical = 10.dp)) {
+                items(3) {
+                    Box(
+                        modifier = Modifier.padding(
+                            start = if (it == 0) 32.dp else 8.dp,
+                            end = 8.dp
+                        )
+                    ) {
+                        EventCard(
+                            eventTitle = "Food Festival Years Indo",
+                            eventLocation = "Jarkata, Indonesia",
+                            eventStartDate = Date(),
+                            price = 45.0,
+                            isHistory = true,
+                            backgroundColor = EventoColors.onBackground
+                        )
+                    }
+                }
+            }
         }
     }
 }
