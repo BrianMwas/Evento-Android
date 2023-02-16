@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="require_alphanumeric">Contains letters and numbers</string>
+    <string name="require_eight_characters">Has a minimum of eight characters</string>
+    <string name="show_password">Show password</string>
+    <string name="hide_password">Hide password</string>
+</resources>

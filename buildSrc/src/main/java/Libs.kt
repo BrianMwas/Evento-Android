@@ -28,6 +28,9 @@ object ComposeLibs {
     const val Manifest = "androidx.compose.ui:ui-test-manifest:${Versions.composeTooling}"
     const val Preview = "androidx.compose.ui:ui-tooling-preview:${Versions.composeTooling}"
     const val Coil = "io.coil-kt:coil-compose:${Versions.coil}"
+    const val CoilBase = "io.coil-kt:coil:${Versions.coil}"
+    const val BarCode = "com.google.zxing:core:${Versions.BarCode}"
+    const val Blur = "com.github.skydoves:cloudy:${Versions.cloudy}"
 }
 
 object NavigationLib {

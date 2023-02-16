@@ -31,6 +31,7 @@
             <option value="$PROJECT_DIR$/libraries" />
             <option value="$PROJECT_DIR$/libraries/eventoframework" />
             <option value="$PROJECT_DIR$/libraries/framework" />
+            <option value="$PROJECT_DIR$/libraries/qr" />
             <option value="$PROJECT_DIR$/libraries/testutils" />
           </set>
         </option>

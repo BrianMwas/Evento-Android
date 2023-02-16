@@ -1,5 +1,4 @@
-import extensions.THEME
-import extensions.addNavigationDependency
+import extensions.*
 
 plugins {
     id("commons.android-feature")
@@ -14,5 +13,12 @@ ksp {
 
 dependencies {
     THEME
+    FEATURE_EVENTS
+    FEATURE_TICKETS
+    FEATURE_PROFILE
+    PROVIDER
+    EVENTOFRAMEWORK
+    implementation(ComposeLibs.Coil)
+    implementation(ComposeLibs.CoilBase)
     addNavigationDependency()
 }

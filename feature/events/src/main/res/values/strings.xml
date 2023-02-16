@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="global_events">Global events illustration</string>
+    <string name="search_events">Search Events</string>
+</resources>

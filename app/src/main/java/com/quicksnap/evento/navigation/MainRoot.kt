@@ -6,6 +6,7 @@ import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
@@ -35,7 +36,7 @@ fun MainRoot(
     }
 
     EventoTheme(darkTheme = isDarkMode) {
-        SetupSystemUIController(systemUiController = rememberSystemUiController(), systemColor = Primary)
+        SetupSystemUIController(rememberSystemUiController(), Color.Transparent)
         Surface(modifier = Modifier.fillMaxSize()) {
             DestinationsNavHost(
                 navController = navController,

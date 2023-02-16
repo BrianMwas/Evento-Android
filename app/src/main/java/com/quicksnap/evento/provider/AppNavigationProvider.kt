@@ -1,7 +1,10 @@
 package com.quicksnap.evento.provider
 
 import androidx.navigation.NavController
+import com.quicksnap.events.presentation.destinations.EventDetailsScreenDestination
 import com.quicksnap.provider.NavigationProvider
+import com.ramcosta.composedestinations.navigation.navigate
+import com.ramcosta.composedestinations.navigation.navigateTo
 
 class AppNavigationProvider constructor(
     private val navController: NavController
