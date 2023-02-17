@@ -18,6 +18,7 @@ dependencies {
     THEME
     PROVIDER
     EVENTOFRAMEWORK
+
     implementation(ComposeLibs.Blur)
     implementation(ComposeLibs.MaterialExtended)
     addNavigationDependency()
