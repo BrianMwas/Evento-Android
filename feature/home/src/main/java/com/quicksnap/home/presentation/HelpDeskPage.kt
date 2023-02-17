@@ -157,7 +157,7 @@ fun SelectTopicGrid() {
         )
         QueryBox(
             title = "Reschedule",
-            icon = R.drawable.reschedule
+            icon = R.drawable.reschedule_note
         )
         QueryBox(
             title = "Other",

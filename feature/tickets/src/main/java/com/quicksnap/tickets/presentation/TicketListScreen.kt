@@ -10,13 +10,14 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.quicksnap.eventoframework.ui.EmptyData
 import com.quicksnap.events.presentation.list.components.EventCard
 import com.quicksnap.provider.NavigationProvider
-import com.quicksnap.theme.EventoColors
-import com.quicksnap.theme.EventoTypography
-import com.quicksnap.theme.Primary
+import com.quicksnap.theme.*
+import com.quicksnap.tickets.R
 import com.quicksnap.tickets.presentation.components.UpcomingTicketCard
 import java.util.*
 
@@ -82,8 +83,8 @@ fun TicketListScreen(
                 items(3) {
                     Box(
                         modifier = Modifier.padding(
-                            start = if (it == 0) 32.dp else 8.dp,
-                            end = 8.dp
+                            start = if (it == 0) 32.dp else 4.dp,
+                            end = 4.dp
                         )
                     ) {
                         EventCard(
@@ -99,4 +100,26 @@ fun TicketListScreen(
             }
         }
     }
+}
+
+
+@Composable
+fun EmptyTicketsPage() {
+    EmptyData(
+        icon = R.drawable.empty_tickets,
+        title = "There are no upcoming tickets yet",
+        titleStyle = EventoTypography.h6.copy(
+            fontWeight = FontWeight.Bold
+        ),
+        explanation = "Don't miss your chance to catch your favorite meet up",
+        subtitleStyle = EventoTypography.body2.copy(
+            color = SecondaryDark
+        )
+    )
+}
+
+@Preview(showSystemUi = true)
+@Composable
+fun EmptyTicketsPreview() {
+    EmptyTicketsPage()
 }

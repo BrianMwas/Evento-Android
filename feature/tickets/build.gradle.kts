@@ -18,6 +18,7 @@ dependencies {
     PROVIDER
     QR_CODE
     FEATURE_EVENTS
+    EVENTOFRAMEWORK
     /// Generate a bar code
     implementation(ComposeLibs.BarCode)
 

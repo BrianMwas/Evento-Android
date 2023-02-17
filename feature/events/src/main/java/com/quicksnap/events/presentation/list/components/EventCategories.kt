@@ -33,46 +33,50 @@ fun EventCategoriesRow(
     onSelectCategory: (EventCategory) -> Unit,
 ) {
     ScrollableTabRow(
-        modifier = modifier.clip(EventoShaped.medium).padding(bottom = 20.dp),
+        modifier = modifier
+            .padding(bottom = 20.dp),
         backgroundColor = Color.Transparent,
         selectedTabIndex = selectedCategory.ordinal,
         edgePadding = 32.dp,
         indicator = {
             Box {}
+        },
+        divider = {
+            Spacer(modifier = Modifier.width(4.dp))
         }
     ) {
         val categories = EventCategory.values()
         categories.forEach { category ->
-            Box(modifier = Modifier.padding(end = 4.dp)) {
-                Tab(
+            Tab(
+                modifier = Modifier
+                    .clip(EventoShaped.small)
+                    .background(
+                        if (selectedCategory == category) {
+                            Primary
+                        } else {
+                            EventoColors.onBackground
+                        }
+                    ).padding(horizontal = 4.dp),
+                selected = category.ordinal == selectedCategory.ordinal,
+                onClick = {
+                    onSelectCategory(category)
+                },
+            ) {
+                Box(
                     modifier = Modifier
-                        .clip(EventoShaped.small)
-                        .background(
-                            if (selectedCategory == category) {
-                                Primary
-                            } else {
-                                EventoColors.onBackground
-                            }
-                        )
-                        .padding(horizontal = 5.dp),
-                    selected = category.ordinal == selectedCategory.ordinal,
-                    onClick = {
-                        onSelectCategory(category)
-                    },
+                        .fillMaxWidth()
+                        .padding(horizontal = 16.dp, vertical = 10.dp)
                 ) {
-                    Box(modifier = Modifier.padding(vertical = 10.dp, horizontal = 12.dp)) {
-                        Text(
-                            text = category.label, style = EventoTypography.body1.copy(
-                                color = if (selectedCategory == category)
-                                    White
-                                else
-                                    EventoTypography.body1.color
-                            )
+                    Text(
+                        text = category.label, style = EventoTypography.body1.copy(
+                            color = if (selectedCategory == category)
+                                White
+                            else
+                                EventoTypography.body1.color
                         )
-                    }
+                    )
                 }
             }
-
         }
     }
 }

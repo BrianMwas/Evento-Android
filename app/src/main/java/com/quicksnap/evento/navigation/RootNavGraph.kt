@@ -2,6 +2,7 @@ package com.quicksnap.evento.navigation
 
 import com.quicksnap.events.presentation.EventsNavGraph
 import com.quicksnap.home.presentation.HomeNavGraph
+import com.quicksnap.profile.presentation.pages.ProfileNavGraph
 import com.quicksnap.tickets.presentation.TicketsNavGraph
 import com.ramcosta.composedestinations.spec.DestinationSpec
 import com.ramcosta.composedestinations.spec.NavGraphSpec
@@ -15,5 +16,6 @@ object RootNavGraph: NavGraphSpec {
         HomeNavGraph,
         EventsNavGraph,
         TicketsNavGraph,
+        ProfileNavGraph
     )
 }

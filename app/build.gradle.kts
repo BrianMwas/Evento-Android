@@ -9,6 +9,14 @@ plugins {
 }
 
 android {
+    signingConfigs {
+        create("release") {
+            storeFile = file("/Users/brian/Documents/Private/evento")
+            storePassword = "Evento2023"
+            keyAlias = "upload"
+            keyPassword = "EventoUpload2023"
+        }
+    }
     namespace  ="com.quicksnap.evento"
     compileSdk  = ConfigData.compileSdkVersion
 

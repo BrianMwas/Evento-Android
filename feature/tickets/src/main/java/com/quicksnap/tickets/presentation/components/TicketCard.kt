@@ -15,10 +15,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.quicksnap.qr.QrCodeProperties
 import com.quicksnap.qr.QrCodeView
-import com.quicksnap.theme.EventoColors
-import com.quicksnap.theme.EventoShaped
-import com.quicksnap.theme.EventoTypography
-import com.quicksnap.theme.Gray
+import com.quicksnap.theme.*
 import java.text.DateFormat
 import java.util.*
 
