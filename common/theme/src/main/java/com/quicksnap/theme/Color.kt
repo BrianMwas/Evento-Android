@@ -19,6 +19,7 @@ val Primary = Color(0XFF249781)
 val PrimaryLight = Color(0xFFDAF5F1)
 val Secondary = Color(0xFF8BDDCD)
 val Accent = Color(0xFF8BDDCD)
+val Amber = Color(0xFFFFC35D)
 
 val PrimaryDark = Color(0xFF121933)
 val SecondaryDark = Color(0xFF495270)
