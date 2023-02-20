@@ -24,4 +24,5 @@ dependencies {
     implementation(DaggerHilt.Android)
     kapt(DaggerHilt.Compiler)
     implementation(DaggerHilt.Compose)
+    implementation(ComposeLibs.MaterialExtended)
 }
