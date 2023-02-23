@@ -34,7 +34,7 @@ fun PopularEventCard() {
     ) {
         Image(
             modifier = Modifier.fillMaxSize(),
-            painter = painterResource(id = R.drawable.concert),
+            painter = painterResource(id = R.drawable.event_placeholder),
             contentDescription = "Popular event placeholder",
             contentScale = ContentScale.Crop
         )

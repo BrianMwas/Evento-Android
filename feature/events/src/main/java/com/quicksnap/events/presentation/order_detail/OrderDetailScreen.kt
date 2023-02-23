@@ -30,7 +30,9 @@ fun OrderDetailScreen(
 
 @Composable
 fun OrderDetailPage() {
-    Column(modifier = Modifier.fillMaxSize().padding(horizontal = 32.dp)) {
+    Column(modifier = Modifier
+        .fillMaxSize()
+        .padding(horizontal = 32.dp)) {
         Row(
             modifier = Modifier
                 .fillMaxWidth()
@@ -51,7 +53,7 @@ fun OrderDetailPage() {
         Card(shape = EventoShaped.large, modifier = Modifier.padding(bottom = 8.dp)) {
             Column(modifier = Modifier.padding(16.dp)) {
                 Image(
-                    painter = painterResource(id = R.drawable.concert),
+                    painter = painterResource(id = R.drawable.event_placeholder),
                     contentDescription = "Event preview page",
                     contentScale = ContentScale.Crop,
                     modifier = Modifier
@@ -71,7 +73,9 @@ fun OrderDetailPage() {
                 )
                 Spacer(modifier = Modifier.height(16.dp))
                 Row(
-                    modifier = Modifier.padding(bottom = 16.dp),
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(bottom = 16.dp),
                     horizontalArrangement = Arrangement.SpaceBetween,
                 ) {
                     Column {
@@ -94,12 +98,18 @@ fun OrderDetailPage() {
                 Column {
                     Text(text = "Package")
                     Text(
-                        text = "Gold Package - VIPP Seat, 2 Day Full", style = EventoTypography.body1
+                        text = "Gold Package - VIPP Seat, 2 Day Full",
+                        style = EventoTypography.body1
                     )
                 }
             }
         }
-        Card(shape = EventoShaped.large, modifier = Modifier.fillMaxWidth().padding(bottom = 16.dp)) {
+        Card(
+            shape = EventoShaped.large,
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(bottom = 16.dp)
+        ) {
             Text(text = "Order Summary", style = EventoTypography.h6)
 
         }

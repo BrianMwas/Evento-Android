@@ -191,7 +191,7 @@ fun OnBoardingDetailFeature(
                 onClick = {
                     if (currentPage < 2) {
                         coroutineScope.launch {
-                            state.animateScrollToPage(currentPage + 1)
+                            state.scrollToPage(currentPage + 1)
                         }
                     } else {
                         skip()
