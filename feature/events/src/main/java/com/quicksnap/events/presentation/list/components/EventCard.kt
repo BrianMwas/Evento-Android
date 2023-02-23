@@ -53,7 +53,7 @@ fun EventCard(
                 contentAlignment = Alignment.TopCenter
             ) {
                 Image(
-                    painter = painterResource(id = R.drawable.concert),
+                    painter = painterResource(id = R.drawable.event_placeholder),
                     contentScale = ContentScale.Crop,
                     contentDescription = "Event preview photo",
                     modifier = Modifier

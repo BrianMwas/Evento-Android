@@ -45,7 +45,7 @@ fun EventPage(navigate: () -> Unit) {
     Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.BottomCenter) {
         Column(modifier = Modifier.fillMaxSize()) {
             Image(
-                painter = painterResource(id = R.drawable.concert),
+                painter = painterResource(id = R.drawable.event_placeholder),
                 contentDescription = "Concert detail image",
                 contentScale = ContentScale.Crop,
                 modifier = Modifier.weight(0.65f)

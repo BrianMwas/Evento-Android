@@ -48,7 +48,7 @@ fun SpecialEventCard(
             verticalAlignment = Alignment.CenterVertically
         ) {
             Image(
-                painter = painterResource(R.drawable.concert),
+                painter = painterResource(R.drawable.event_placeholder),
                 contentDescription = "Concert image",
                 contentScale = ContentScale.Crop,
                 modifier = Modifier
