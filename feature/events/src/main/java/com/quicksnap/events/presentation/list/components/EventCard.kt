@@ -2,6 +2,7 @@ package com.quicksnap.events.presentation.list.components
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
@@ -36,12 +37,17 @@ fun EventCard(
     eventStartDate: Date,
     eventLocation: String,
     price: Double,
-    isHistory: Boolean = false
+    isHistory: Boolean = false,
+    openDetail: (String) -> Unit,
+    rebook: (() -> Unit)? = null
 ) {
     Card(
-        modifier = Modifier
+        modifier = modifier
             .width(200.dp)
-            .clip(EventoShaped.medium),
+            .clip(EventoShaped.medium)
+            .clickable {
+                       openDetail("event_detail_id")
+            },
         backgroundColor = backgroundColor,
     ) {
         Column(modifier = Modifier.padding(10.dp)) {
@@ -117,7 +123,8 @@ fun EventCard(
                         modifier = Modifier.padding(top = 12.dp),
                         background = if (isSystemInDarkTheme()) EventoColors.secondary else PrimaryLight,
                         shape = EventoShaped.small,
-                        onClick = { /*TODO*/ }) {
+                        onClick = rebook!!
+                    ) {
                         Text(
                             text = "Rebooking",
                             style = if (!isSystemInDarkTheme()) EventoTypography.body1.copy(
@@ -150,6 +157,8 @@ fun EventCardPreview() {
         eventStartDate = Date(),
         eventLocation = "Nairobi, Kenya",
         price = 20.0,
-        isHistory = true
+        isHistory = true,
+        openDetail = {},
+        rebook = {}
     )
 }

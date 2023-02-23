@@ -23,6 +23,8 @@ import com.ramcosta.composedestinations.annotation.Destination
 @Destination
 @Composable
 fun OrderDetailScreen(
+    orderId: String = "",
+    eventId: String = "",
     viewModel: OrderDetailViewModel = hiltViewModel()
 ) {
     OrderDetailPage()

@@ -45,7 +45,16 @@ fun ProfileScreen(
         skipHalfExpanded = true
     ),
 ) {
-    ProfilePage(modifier = modifier, sheetState = bottomSheetState)
+    ProfilePage(
+        modifier = modifier,
+        sheetState = bottomSheetState,
+        toChangePassword = {
+            navigationProvider.openChangePassword()
+        },
+        toProfileDataChange = {
+            navigationProvider.openChangeProfileData()
+        },
+    )
 }
 
 enum class ThemeMode {
@@ -54,7 +63,12 @@ enum class ThemeMode {
 
 @OptIn(ExperimentalMaterialApi::class)
 @Composable
-fun ProfilePage(modifier: Modifier = Modifier, sheetState: ModalBottomSheetState) {
+fun ProfilePage(
+    modifier: Modifier = Modifier,
+    sheetState: ModalBottomSheetState,
+    toProfileDataChange: () -> Unit,
+    toChangePassword: () -> Unit
+) {
     val coroutineScope = rememberCoroutineScope()
     var currentTheme by remember {
         mutableStateOf(ThemeMode.Dark)
@@ -206,11 +220,11 @@ fun ProfilePage(modifier: Modifier = Modifier, sheetState: ModalBottomSheetState
                             ProfileActionCard(
                                 title = "Change Profile Data",
                                 icon = R.drawable.profile_edit,
-                                onTap = {})
+                                onTap = toProfileDataChange)
                             ProfileActionCard(
                                 title = "Change Password",
                                 icon = R.drawable.password_change,
-                                onTap = {})
+                                onTap = toChangePassword)
                             ProfileActionCard(
                                 title = "Dark Mode",
                                 icon = R.drawable.theme_mode,
@@ -254,5 +268,7 @@ fun ProfileScreenPreview() {
             confirmStateChange = { it != ModalBottomSheetValue.HalfExpanded },
             skipHalfExpanded = true
         ),
+        toProfileDataChange = {},
+        toChangePassword = {}
     )
 }

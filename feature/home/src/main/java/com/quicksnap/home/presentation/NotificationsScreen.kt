@@ -4,23 +4,26 @@ import androidx.annotation.DrawableRes
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
-import androidx.compose.material.Card
-import androidx.compose.material.Icon
-import androidx.compose.material.IconButton
-import androidx.compose.material.Text
+import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBackIosNew
 import androidx.compose.material.icons.outlined.Cancel
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.quicksnap.eventoframework.ui.EmptyData
 import com.quicksnap.home.R
+import com.quicksnap.provider.NavigationProvider
 import com.quicksnap.theme.*
+import com.ramcosta.composedestinations.annotation.Destination
+import kotlinx.coroutines.launch
 
 enum class NotificationType(@DrawableRes val icon: Int) {
     Welcome(R.drawable.welcome),
@@ -31,33 +34,60 @@ enum class NotificationType(@DrawableRes val icon: Int) {
     Thanks(R.drawable.smile)
 }
 
+@Destination
 @Composable
-fun NotificationScreen() {
+fun NotificationScreen(
+    navigationProvider: NavigationProvider,
+) {
+    val scaffoldState = rememberScaffoldState()
+    val coroutineScope = rememberCoroutineScope()
+    Scaffold(scaffoldState = scaffoldState) {
+        NotificationBody(
+            modifier = Modifier.padding(it.calculateTopPadding()),
+            goBack = { navigationProvider.navigateUp() },
+            onClear = {
+                coroutineScope.launch {
+                    when(scaffoldState.snackbarHostState.showSnackbar(message = "Clear all notifications", actionLabel = "YES")) {
+                        SnackbarResult.Dismissed -> {}
+                        SnackbarResult.ActionPerformed -> {}
+                    }
+                }
+            }
+        )
+    }
+}
+
+@Composable
+fun NotificationBody(
+    modifier: Modifier = Modifier,
+    goBack: () -> Unit,
+    onClear: () -> Unit,
+) {
     Box(
-        modifier = Modifier
+        modifier = modifier
             .fillMaxSize()
             .background(EventoColors.background)
     ) {
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(horizontal = 32.dp)
+                .padding(horizontal = 16.dp)
         ) {
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
                     .statusBarsPadding()
-                    .padding(top = 32.dp),
+                    .padding(top = 8.dp),
                 verticalAlignment = Alignment.CenterVertically,
             ) {
-                IconButton(onClick = { /*TODO*/ }) {
-                    Icon(Icons.Default.ArrowBackIosNew, contentDescription = "Go back")
+                IconButton(onClick = goBack) {
+                    Icon(Icons.Default.ArrowBackIosNew, tint = Gray, contentDescription = "Go back")
                 }
                 Row(modifier = Modifier.weight(1f), horizontalArrangement = Arrangement.Center) {
                     Text(text = "Notification", style = EventoTypography.h5)
                 }
-                IconButton(onClick = { /*TODO*/ }) {
-                    Icon(Icons.Outlined.Cancel, contentDescription = "Clear all notifications")
+                IconButton(onClick = onClear) {
+                    Icon(Icons.Outlined.Cancel, tint = Gray, contentDescription = "Clear all notifications")
                 }
             }
             Column(
@@ -136,6 +166,6 @@ fun EmptyNotificationsPreview() {
 @Composable
 fun NotificationScreenPreview() {
     EventoTheme {
-        NotificationScreen()
+        NotificationBody(goBack = {}, onClear = {})
     }
 }

@@ -32,6 +32,21 @@ fun TicketListScreen(
         skipHalfExpanded = true
     ),
 ) {
+    TicketListBody(
+        modifier = modifier,
+        toEventDetail = { eventId ->
+            navigationProvider.openEventDetail(eventId)
+        },
+        rebookEvent = {}
+    )
+}
+
+@Composable
+fun TicketListBody(
+    modifier: Modifier = Modifier,
+    toEventDetail: (String) -> Unit,
+    rebookEvent: () -> Unit,
+) {
     Box(
         modifier = modifier
             .background(EventoColors.background)
@@ -93,7 +108,9 @@ fun TicketListScreen(
                             eventStartDate = Date(),
                             price = 45.0,
                             isHistory = true,
-                            backgroundColor = EventoColors.onBackground
+                            backgroundColor = EventoColors.onBackground,
+                            openDetail = toEventDetail,
+                            rebook = rebookEvent
                         )
                     }
                 }

@@ -2,10 +2,10 @@ package com.quicksnap.profile.presentation.pages
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.Icon
-import androidx.compose.material.IconButton
 import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBackIosNew
@@ -21,17 +21,25 @@ import androidx.compose.ui.unit.dp
 import com.quicksnap.eventoframework.ui.EventoTextField
 import com.quicksnap.eventoframework.ui.ExpandedButton
 import com.quicksnap.profile.R
+import com.quicksnap.provider.NavigationProvider
 import com.quicksnap.theme.*
 import com.ramcosta.composedestinations.annotation.Destination
+import com.ramcosta.composedestinations.annotation.RootNavGraph
 
-
+@RootNavGraph(start = true)
 @Destination
 @Composable
-fun ChangePasswordPage() {
+fun ChangeProfileDataScreen(navigationProvider: NavigationProvider) {
+    ChangeProfileDataBody(goBack = {
+        navigationProvider.navigateUp()
+    })
+}
+
+@Composable
+fun ChangeProfileDataBody(goBack: () -> Unit) {
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(EventoColors.background)
     ) {
         Box(
             modifier = Modifier
@@ -60,32 +68,38 @@ fun ChangePasswordPage() {
                     .align(Alignment.TopCenter),
                 verticalAlignment = Alignment.CenterVertically
             ) {
-                IconButton(
+                Box(
                     modifier = Modifier
+                        .size(35.dp)
                         .clip(CircleShape)
-                        .background(White),
-                    onClick = { /*TODO*/ }) {
+                        .background(White)
+                        .padding(5.dp)
+                        .clickable { goBack() },
+                    contentAlignment = Alignment.Center,
+                ) {
                     Icon(
                         Icons.Default.ArrowBackIosNew,
                         contentDescription = "Go back",
-                        tint = EventoColors.secondary
+                        tint = Black
                     )
                 }
+
                 Row(modifier = Modifier.weight(1f), horizontalArrangement = Arrangement.Center) {
                     Text(
-                        text = "Change Password", style = EventoTypography.h6.copy(
+                        text = "Change Profile", style = EventoTypography.h6.copy(
                             color = White
                         )
                     )
                 }
             }
         }
-
-        Column(modifier = Modifier.weight(1f).padding(horizontal = 32.dp, vertical = 16.dp)) {
+        Column(modifier = Modifier
+            .weight(1f)
+            .padding(horizontal = 32.dp, vertical = 16.dp)) {
             EventoTextField(
                 modifier = Modifier
-                    .padding(bottom = 16.dp)
-                    .clip(EventoShaped.medium),
+                    .clip(EventoShaped.small)
+                    .background(EventoColors.secondaryVariant),
                 value = "",
                 onChange = {},
                 paddingStart = 16.dp,
@@ -104,8 +118,8 @@ fun ChangePasswordPage() {
             )
             EventoTextField(
                 modifier = Modifier
-                    .padding(bottom = 16.dp)
-                    .clip(EventoShaped.medium),
+                    .clip(EventoShaped.small)
+                    .background(EventoColors.secondaryVariant),
                 value = "",
                 onChange = {},
                 paddingStart = 16.dp,
@@ -124,8 +138,8 @@ fun ChangePasswordPage() {
             )
             EventoTextField(
                 modifier = Modifier
-                    .padding(bottom = 16.dp)
-                    .clip(EventoShaped.medium),
+                    .clip(EventoShaped.small)
+                    .background(EventoColors.secondaryVariant),
                 value = "",
                 onChange = {},
                 paddingStart = 16.dp,
@@ -144,8 +158,8 @@ fun ChangePasswordPage() {
             )
             EventoTextField(
                 modifier = Modifier
-                    .padding(bottom = 16.dp)
-                    .clip(EventoShaped.medium),
+                    .clip(EventoShaped.small)
+                    .background(EventoColors.secondaryVariant),
                 value = "",
                 onChange = {},
                 paddingStart = 16.dp,
@@ -176,6 +190,6 @@ fun ChangePasswordPage() {
 
 @Preview
 @Composable
-fun ChangePasswordPagePreview() {
-    ChangePasswordPage()
+fun ChangeProfilePagePreview() {
+    ChangeProfileDataBody(goBack = {})
 }
