@@ -74,7 +74,6 @@ fun DependencyHandler.addComposeDependency() {
     implementation(ComposeLibs.UITooling)
     androidTestImplementation(AndroidTestLib.JUnitCompose)
     debugImplementation(ComposeLibs.Manifest)
-
 }
 
 fun DependencyHandler.addNavigationDependency() {
@@ -90,7 +89,6 @@ fun DependencyHandler.addTestDependencies() {
 }
 
 fun DependencyHandler.addModuleDependency() {
-    implementation(project(mapOf("path" to ":feature:authentication")))
     implementation(project(mapOf("path" to ":feature:home")))
     implementation(project(mapOf("path" to ":feature:onboarding")))
     implementation(project(mapOf("path" to ":feature:tickets")))
@@ -105,9 +103,6 @@ fun DependencyHandler.addModuleDependency() {
     implementation(project(mapOf("path" to ":feature:splash")))
     implementation(project(mapOf("path" to ":libraries:eventoframework")))
 }
-
-val DependencyHandler.FEATURE_AUTHENTICATION
-    get() = implementation(project(mapOf("path" to ":feature:authentication")))
 
 val DependencyHandler.FEATURE_HOME
     get() = implementation(project(mapOf("path" to ":feature:home")))

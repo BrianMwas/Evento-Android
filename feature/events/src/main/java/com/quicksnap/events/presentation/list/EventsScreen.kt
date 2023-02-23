@@ -220,8 +220,8 @@ fun EventsScreen(
                         items(5) {
                             Box(
                                 modifier = Modifier.padding(
-                                    start = if (it == 0) 32.dp else 8.dp,
-                                    end = 8.dp
+                                    start = if (it == 0) 32.dp else 4.dp,
+                                    end = 4.dp
                                 )
                             ) {
                                 EventCard(

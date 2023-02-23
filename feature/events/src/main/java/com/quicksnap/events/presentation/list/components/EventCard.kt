@@ -2,6 +2,7 @@ package com.quicksnap.events.presentation.list.components
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.Card
@@ -52,7 +53,7 @@ fun EventCard(
                 contentAlignment = Alignment.TopCenter
             ) {
                 Image(
-                    painter = painterResource(id = R.drawable.concert),
+                    painter = painterResource(id = R.drawable.event_placeholder),
                     contentScale = ContentScale.Crop,
                     contentDescription = "Event preview photo",
                     modifier = Modifier
@@ -114,10 +115,16 @@ fun EventCard(
                 if (isHistory) {
                     ExpandedButton(
                         modifier = Modifier.padding(top = 12.dp),
-                        background = EventoColors.secondary,
+                        background = if (isSystemInDarkTheme()) EventoColors.secondary else PrimaryLight,
                         shape = EventoShaped.small,
                         onClick = { /*TODO*/ }) {
-                        Text(text = "Rebooking")
+                        Text(
+                            text = "Rebooking",
+                            style = if (!isSystemInDarkTheme()) EventoTypography.body1.copy(
+                                color = Primary,
+                                fontWeight = FontWeight.Bold
+                            ) else EventoTypography.body1
+                        )
                     }
                 } else {
                     Text(

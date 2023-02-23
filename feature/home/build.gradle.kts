@@ -18,6 +18,7 @@ dependencies {
     FEATURE_PROFILE
     PROVIDER
     EVENTOFRAMEWORK
+    implementation(ComposeLibs.MaterialExtended)
     implementation(ComposeLibs.Coil)
     implementation(ComposeLibs.CoilBase)
     addNavigationDependency()
