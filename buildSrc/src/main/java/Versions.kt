@@ -25,5 +25,8 @@ object Versions {
     const val accompanistPager = "0.29.1-alpha"
     const val BarCode = "3.5.1"
     const val cloudy = "0.1.2"
+    const val firebaseBom = "31.2.2"
+
+    const val facebook ="16.0.0"
 }
 

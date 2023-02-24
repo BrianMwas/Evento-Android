@@ -4,4 +4,8 @@
     <string name="pref_light_mode_value">light_mode</string>
     <string name="dark_mode_value">dark_mode</string>
     <string name="system_mode_value">system_mode</string>
+
+    <string name="facebook_app_id">754481739434953</string>
+    <string name="fb_login_protocol_scheme">fb1234</string>
+    <string name="facebook_client_token">2fde7acacffa5301e7666bdb7c857f12</string>
 </resources>

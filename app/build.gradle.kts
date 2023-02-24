@@ -6,6 +6,7 @@ plugins {
     kotlin("kapt")
     id("com.google.dagger.hilt.android")
     id("com.google.devtools.ksp")
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -81,6 +82,9 @@ dependencies {
 
     implementation(DaggerHilt.Android)
     implementation(DaggerHilt.Compose)
+    implementation(platform(Firebase.Bom))
+    implementation(Firebase.facebook)
+    implementation(Firebase.auth)
 
     kapt(DaggerHilt.Compiler)
 }
