@@ -1,5 +1,7 @@
 package com.quicksnap.provider
 
+import android.content.Context
+
 interface NavigationProvider {
     fun openEventDetail(eventId: String)
     fun openOrderDetail(eventId: String, orderId: String)
@@ -8,5 +10,6 @@ interface NavigationProvider {
     fun openNotifications()
     fun openChangePassword()
     fun openChangeProfileData()
+    fun popTillParent()
     fun navigateUp()
 }

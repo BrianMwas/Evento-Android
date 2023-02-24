@@ -9,7 +9,6 @@ import com.quicksnap.profile.presentation.pages.destinations.ChangeProfileDataSc
 import com.quicksnap.provider.NavigationProvider
 import com.quicksnap.tickets.presentation.destinations.TicketDetailScreenDestination
 import com.ramcosta.composedestinations.navigation.navigate
-import com.ramcosta.composedestinations.navigation.navigateTo
 
 class AppNavigationProvider constructor(
     private val navController: NavController
@@ -40,6 +39,11 @@ class AppNavigationProvider constructor(
 
     override fun openChangeProfileData() {
         navController.navigate(ChangeProfileDataScreenDestination())
+    }
+
+    override fun popTillParent() {
+        navController.popBackStack(EventDetailsScreenDestination.route, inclusive = false)
+        navigateUp()
     }
 
     override fun navigateUp() {
