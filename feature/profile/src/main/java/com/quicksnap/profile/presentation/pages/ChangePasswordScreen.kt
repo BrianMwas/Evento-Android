@@ -20,17 +20,25 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.quicksnap.eventoframework.ui.EventoTextField
 import com.quicksnap.profile.R
+import com.quicksnap.provider.NavigationProvider
 import com.quicksnap.theme.*
 import com.ramcosta.composedestinations.annotation.Destination
-import com.ramcosta.composedestinations.annotation.RootNavGraph
 
-@RootNavGraph(start = true)
 @Destination
 @Composable
-fun ChangeProfileDataPage() {
-    Column(modifier = Modifier
-        .fillMaxSize()
-        .background(EventoColors.background)) {
+fun ChangePasswordScreen(
+    navigationProvider: NavigationProvider
+) {
+    ChangePasswordBody()
+}
+
+@Composable
+fun ChangePasswordBody() {
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .background(EventoColors.background)
+    ) {
         Box(
             modifier = Modifier
                 .fillMaxWidth()
@@ -70,14 +78,19 @@ fun ChangeProfileDataPage() {
                     )
                 }
                 Row(modifier = Modifier.weight(1f), horizontalArrangement = Arrangement.Center) {
-                    Text(text = "Change Password", style = EventoTypography.h6.copy(
-                        color = White
-                    ))
+                    Text(
+                        text = "Change Password", style = EventoTypography.h6.copy(
+                            color = White
+                        )
+                    )
                 }
             }
         }
-
-        Column(modifier = Modifier.weight(1f).padding(horizontal = 32.dp, vertical = 16.dp)) {
+        Column(
+            modifier = Modifier
+                .weight(1f)
+                .padding(horizontal = 32.dp, vertical = 16.dp)
+        ) {
             EventoTextField(
                 modifier = Modifier
                     .padding(bottom = 16.dp)
@@ -139,11 +152,13 @@ fun ChangeProfileDataPage() {
                 cursorColor = Primary,
             )
         }
+
+
     }
 }
 
 @Preview
 @Composable
-fun ChangeProfilePagePreview() {
-    ChangeProfileDataPage()
+fun ChangePasswordPagePreview() {
+    ChangePasswordBody()
 }

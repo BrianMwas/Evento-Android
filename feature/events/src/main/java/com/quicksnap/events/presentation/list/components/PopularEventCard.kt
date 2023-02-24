@@ -2,6 +2,7 @@ package com.quicksnap.events.presentation.list.components
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.Card
@@ -25,11 +26,16 @@ import com.quicksnap.events.R
 import com.quicksnap.theme.*
 
 @Composable
-fun PopularEventCard() {
+fun PopularEventCard(
+    openDetail: (String) -> Unit,
+) {
     Box(
         modifier = Modifier
             .size(300.dp, 200.dp)
             .clip(EventoShaped.medium)
+            .clickable {
+               openDetail("event_detail_id")
+            }
             , contentAlignment = Alignment.BottomCenter
     ) {
         Image(
@@ -106,5 +112,5 @@ fun PopularEventCard() {
 @Preview()
 @Composable
 fun PopularEventCardPreview() {
-    PopularEventCard()
+    PopularEventCard(openDetail = {})
 }

@@ -1,5 +1,6 @@
 package com.quicksnap.events.presentation.detail
 
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -34,14 +35,17 @@ import com.ramcosta.composedestinations.annotation.Destination
 @Destination(start = true)
 @Composable
 fun EventDetailsScreen(
+    id: String = "",
     navigator: NavigationProvider,
     viewModel: EventDetailViewModel = hiltViewModel()
 ) {
-    EventPage(navigate = {})
+    EventBody(goBack = { navigator.navigateUp() }, toOrderDetail = {
+        navigator.openOrderDetail("event_id", "order_id")
+    })
 }
 
 @Composable
-fun EventPage(navigate: () -> Unit) {
+fun EventBody(goBack: () -> Unit, toOrderDetail: () -> Unit) {
     Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.BottomCenter) {
         Column(modifier = Modifier.fillMaxSize()) {
             Image(
@@ -63,7 +67,7 @@ fun EventPage(navigate: () -> Unit) {
                 Column(modifier = Modifier.weight(0.75f)) {
                     Text(
                         text = "International Jazz Festival Jakarta 2023",
-                        style = EventoTypography.h5
+                        style = EventoTypography.h4
                     )
                     Row(
                         modifier = Modifier
@@ -75,6 +79,7 @@ fun EventPage(navigate: () -> Unit) {
                             Icon(
                                 Icons.Default.Event,
                                 contentDescription = "Calendar",
+                                tint = EventoColors.onSecondary,
                                 modifier = Modifier.padding(end = 10.dp)
                             )
                             Text(text = "30 - 31 April 2023")
@@ -84,6 +89,7 @@ fun EventPage(navigate: () -> Unit) {
                             Icon(
                                 Icons.Default.Schedule,
                                 contentDescription = "Calendar",
+                                tint = EventoColors.onSecondary,
                                 modifier = Modifier.padding(end = 10.dp)
                             )
                             Text(text = "9pm - 12pm")
@@ -96,6 +102,7 @@ fun EventPage(navigate: () -> Unit) {
                         Icon(
                             Icons.Default.PinDrop,
                             contentDescription = "Calendar",
+                            tint = EventoColors.onSecondary,
                             modifier = Modifier.padding(end = 10.dp)
                         )
                         Text(text = "Nairobi,  Kenya")
@@ -103,7 +110,8 @@ fun EventPage(navigate: () -> Unit) {
                     Text(
                         text = "Description",
                         style = EventoTypography.h6.copy(
-                            fontSize = EventoTypography.body1.fontSize
+                            fontSize = EventoTypography.body1.fontSize,
+                            color = EventoColors.onSecondary
                         ),
                         modifier = Modifier.padding(bottom = 8.dp),
                     )
@@ -112,18 +120,20 @@ fun EventPage(navigate: () -> Unit) {
                     Text(
                         text = "Package",
                         style = EventoTypography.h6.copy(
-                            fontSize = EventoTypography.body1.fontSize
+                            fontSize = EventoTypography.body1.fontSize,
+                            color = EventoColors.onSecondary
                         ),
                         modifier = Modifier.padding(bottom = 8.dp),
                     )
-                    CardPackage(modifier = Modifier.padding(bottom = 16.dp))
-                    CardPackage()
+                    CardPackage(modifier = Modifier.padding(bottom = 8.dp))
+                    CardPackage(isSelected = true, important = false)
                 }
                 Box(modifier = Modifier.weight(0.25f), contentAlignment = Alignment.BottomCenter) {
                     ExpandedButton(
                         background = Primary,
-                        shape = EventoShaped.large,
-                        onClick = { /*TODO*/ }) {
+                        shape = EventoShaped.medium,
+                        onClick = toOrderDetail
+                    ) {
                         Text(
                             text = "Book Now", style = EventoTypography.body2.copy(
                                 fontWeight = FontWeight.Bold,
@@ -138,8 +148,17 @@ fun EventPage(navigate: () -> Unit) {
 }
 
 @Composable
-fun CardPackage(modifier: Modifier = Modifier) {
-    Card(modifier = modifier.fillMaxWidth(), shape = EventoShaped.large) {
+fun CardPackage(
+    modifier: Modifier = Modifier,
+    isSelected: Boolean = false,
+    important: Boolean = true
+) {
+    Card(
+        modifier = modifier.fillMaxWidth(),
+        border = if (isSelected) BorderStroke(2.dp, Primary) else null,
+        shape = EventoShaped.medium,
+        backgroundColor = EventoColors.onBackground
+    ) {
         Row(
             modifier = Modifier
                 .fillMaxWidth()
@@ -150,7 +169,9 @@ fun CardPackage(modifier: Modifier = Modifier) {
                 modifier = Modifier
                     .size(40.dp)
                     .clip(EventoShaped.medium)
-                    .background(Amber), contentAlignment = Alignment.Center
+                    .background(
+                        if (important) Amber else LightGray
+                    ), contentAlignment = Alignment.Center
             ) {
                 Icon(Icons.Default.Star, contentDescription = "Star", tint = White)
             }
@@ -160,15 +181,17 @@ fun CardPackage(modifier: Modifier = Modifier) {
                     .padding(horizontal = 16.dp)
             ) {
                 Text(
-                    text = "Gold Package", style = EventoTypography.h6.copy(
-                        fontSize = EventoTypography.body2.fontSize
+                    text = if (important) "Gold Package" else "Silver Package",
+                    style = EventoTypography.h6.copy(
+                        fontSize = EventoTypography.body2.fontSize,
+                        color = EventoColors.onSecondary
                     )
                 )
                 Text(text = "VIPP Seat, 2 Day Full")
             }
             Column(horizontalAlignment = Alignment.End) {
                 Text(
-                    text = "$355", style = EventoTypography.body2.copy(
+                    text = "$355", style = EventoTypography.caption.copy(
                         fontWeight = FontWeight.Bold
                     ),
                     textDecoration = TextDecoration.LineThrough
@@ -187,7 +210,8 @@ fun CardPackage(modifier: Modifier = Modifier) {
 @Preview
 @Composable
 fun EventDetailScreen() {
-    EventPage {
-
-    }
+    EventBody(
+        toOrderDetail = {},
+        goBack = {}
+    )
 }

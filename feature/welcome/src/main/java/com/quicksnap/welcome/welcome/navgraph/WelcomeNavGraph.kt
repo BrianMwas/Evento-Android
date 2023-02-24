@@ -23,24 +23,36 @@ fun WelcomeNavGraph() {
         }
         composable(route = Welcome.Start.route) {
             StartScreen(toLogin = {
-                navController.navigate(Welcome.Login.route)
+                navController.navigate(Welcome.Login.route) {
+                    popUpTo(Welcome.Start.route) {
+                        inclusive = true
+                    }
+                }
 
             }, toSignUp = {
-                navController.navigate(Welcome.SignUp.route)
+                navController.navigate(Welcome.SignUp.route) {
+                    popUpTo(Welcome.Start.route) {
+                        inclusive = true
+                    }
+                }
 
             })
         }
 
         composable(route = Welcome.Login.route) {
             LoginScreen( toSignUp = {
-                navController.navigate(Welcome.SignUp.route)
+                navController.navigate(Welcome.SignUp.route) {
+                    popUpTo(Welcome.Login.route)
+                }
             })
         }
 
         composable(route = Welcome.SignUp.route) {
             SignUpScreen(
                 toLogin = {
-                    navController.navigate(Welcome.Login.route)
+                    navController.navigate(Welcome.Login.route){
+                        popUpTo(Welcome.SignUp.route)
+                    }
                 }
             )
         }

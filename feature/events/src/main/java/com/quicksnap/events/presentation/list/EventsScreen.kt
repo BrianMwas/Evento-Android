@@ -50,6 +50,30 @@ fun EventsScreen(
         mutableStateOf(EventCategory.Music)
     }
 
+    EventListBody(
+        search = search, onSearch = { search = it }, selectedCategory = selectedCategory,
+        onSelectCategory = {
+            selectedCategory = it
+        },
+        toNotifications ={
+            navigationProvider.openNotifications()
+        },
+        toEventDetail = { eventId ->
+            navigationProvider.openEventDetail(eventId)
+        }
+    )
+}
+
+@Composable
+fun EventListBody(
+    modifier: Modifier = Modifier,
+    search: String,
+    onSearch: (String) -> Unit,
+    selectedCategory: EventCategory,
+    onSelectCategory: (EventCategory) -> Unit,
+    toNotifications: () -> Unit,
+    toEventDetail: (String) -> Unit
+) {
     Box(modifier = modifier.background(EventoColors.background)) {
         Column(modifier = Modifier.fillMaxSize()) {
             Box(
@@ -103,7 +127,7 @@ fun EventsScreen(
                             Text(text = "Brian Mwangi", style = EventoTypography.h4)
                         }
                         IconButton(
-                            onClick = { /*TODO*/ },
+                            onClick = toNotifications,
                             modifier = Modifier
                                 .clip(
                                     CircleShape
@@ -132,9 +156,7 @@ fun EventsScreen(
                             .background(EventoColors.onBackground)
                             .height(48.dp),
                         value = search,
-                        onChange = {
-                            search = it
-                        },
+                        onChange = onSearch,
                         paddingStart = 27.dp,
                         placeholder = "Search",
                         placeholderStyle = EventoTypography.body1.copy(
@@ -162,9 +184,7 @@ fun EventsScreen(
                 )
                 EventCategoriesRow(
                     selectedCategory = selectedCategory,
-                    onSelectCategory = { category ->
-                        selectedCategory = category
-                    }
+                    onSelectCategory = onSelectCategory
                 )
                 Column(
                     modifier = Modifier
@@ -196,7 +216,7 @@ fun EventsScreen(
                                     end = 8.dp
                                 )
                             ) {
-                                PopularEventCard()
+                                PopularEventCard(openDetail = toEventDetail)
                             }
                         }
                     }
@@ -229,7 +249,8 @@ fun EventsScreen(
                                     eventLocation = "Jarkata, Indonesia",
                                     eventStartDate = Date(),
                                     price = 45.0,
-                                    backgroundColor = EventoColors.onBackground
+                                    backgroundColor = EventoColors.onBackground,
+                                    openDetail = toEventDetail
                                 )
                             }
                         }
@@ -273,5 +294,4 @@ fun EventsScreen(
             }
         }
     }
-
 }

@@ -36,16 +36,22 @@ val DarkTypography = Typography(
         color = White,
         fontSize = 15.sp
     ),
+    h6 = TextStyle(
+        fontFamily = OpenSansFonts,
+        fontWeight = FontWeight.Bold,
+        color = White,
+        fontSize = 15.sp,
+    ),
     body1 = TextStyle(
         fontFamily = NunitoSansFonts,
         fontWeight = FontWeight.Normal,
-        color = White,
+        color = LightGray,
         fontSize = 15.sp
     ),
     body2 = TextStyle(
         fontFamily = NunitoSansFonts,
         fontWeight = FontWeight.Normal,
-        color = White,
+        color = LightGray,
     ),
     button = TextStyle(
         fontFamily = NunitoSansFonts,
