@@ -7,7 +7,7 @@ import androidx.compose.ui.graphics.Color
 val BackgroundLight = Color(0xFFF6F6F6)
 val BackgroundDark = Color(0xFF000000)
 val Black = Color(0xFF000000)
-val Gray = Color(0xFFC7C7C7)
+val Gray = Color(0xFFD1D3D4)
 val IconGray = Color(0xFF838383)
 val PlaceholderGray = Color(0xFFC8C8C9)
 val TextFieldGray = Color(0xFFF7F8FB)

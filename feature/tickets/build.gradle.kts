@@ -21,6 +21,6 @@ dependencies {
     EVENTOFRAMEWORK
     /// Generate a bar code
     implementation(ComposeLibs.BarCode)
-
+    implementation(ComposeLibs.MaterialExtended)
     addNavigationDependency()
 }

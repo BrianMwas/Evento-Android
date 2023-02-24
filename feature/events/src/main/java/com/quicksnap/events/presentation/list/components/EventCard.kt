@@ -43,10 +43,10 @@ fun EventCard(
 ) {
     Card(
         modifier = modifier
-            .width(200.dp)
+            .width(220.dp)
             .clip(EventoShaped.medium)
             .clickable {
-                       openDetail("event_detail_id")
+                openDetail("event_detail_id")
             },
         backgroundColor = backgroundColor,
     ) {

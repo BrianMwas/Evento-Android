@@ -90,6 +90,17 @@ fun NotificationBody(
                     Icon(Icons.Outlined.Cancel, tint = Gray, contentDescription = "Clear all notifications")
                 }
             }
+//            EmptyData(
+//                icon = R.drawable.bell,
+//                title = "No Notifications",
+//                explanation = "No notifications yet. They will appear here automatically once you receive them.",
+//                titleStyle = EventoTypography.h5.copy(
+//                    fontWeight = FontWeight.Bold,
+//                ),
+//                subtitleStyle = EventoTypography.body2.copy(
+//                    color = SecondaryDark
+//                )
+//            )
             Column(
                 modifier = Modifier
                     .weight(1f)
@@ -124,11 +135,13 @@ fun NotificationCard(
                     .padding(start = 16.dp)
             ) {
                 Text(
-                    text = title, style = EventoTypography.h6.copy(
+                    text = title, style = EventoTypography.h5.copy(
                         fontWeight = FontWeight.Bold,
                     )
                 )
-                Text(text = subtitle, style = EventoTypography.caption.copy(color = SecondaryDark))
+                Text(text = subtitle, style = EventoTypography.caption.copy(
+                    color = DarkGray
+                ))
             }
         }
     }

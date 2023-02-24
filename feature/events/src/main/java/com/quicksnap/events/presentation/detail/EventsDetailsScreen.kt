@@ -1,5 +1,6 @@
 package com.quicksnap.events.presentation.detail
 
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -124,14 +125,15 @@ fun EventBody(goBack: () -> Unit, toOrderDetail: () -> Unit) {
                         ),
                         modifier = Modifier.padding(bottom = 8.dp),
                     )
-                    CardPackage(modifier = Modifier.padding(bottom = 16.dp))
-                    CardPackage()
+                    CardPackage(modifier = Modifier.padding(bottom = 8.dp))
+                    CardPackage(isSelected = true, important = false)
                 }
                 Box(modifier = Modifier.weight(0.25f), contentAlignment = Alignment.BottomCenter) {
                     ExpandedButton(
                         background = Primary,
                         shape = EventoShaped.medium,
-                        onClick = toOrderDetail) {
+                        onClick = toOrderDetail
+                    ) {
                         Text(
                             text = "Book Now", style = EventoTypography.body2.copy(
                                 fontWeight = FontWeight.Bold,
@@ -146,8 +148,17 @@ fun EventBody(goBack: () -> Unit, toOrderDetail: () -> Unit) {
 }
 
 @Composable
-fun CardPackage(modifier: Modifier = Modifier) {
-    Card(modifier = modifier.fillMaxWidth(), shape = EventoShaped.medium, backgroundColor = EventoColors.onBackground) {
+fun CardPackage(
+    modifier: Modifier = Modifier,
+    isSelected: Boolean = false,
+    important: Boolean = true
+) {
+    Card(
+        modifier = modifier.fillMaxWidth(),
+        border = if (isSelected) BorderStroke(2.dp, Primary) else null,
+        shape = EventoShaped.medium,
+        backgroundColor = EventoColors.onBackground
+    ) {
         Row(
             modifier = Modifier
                 .fillMaxWidth()
@@ -158,7 +169,9 @@ fun CardPackage(modifier: Modifier = Modifier) {
                 modifier = Modifier
                     .size(40.dp)
                     .clip(EventoShaped.medium)
-                    .background(Amber), contentAlignment = Alignment.Center
+                    .background(
+                        if (important) Amber else LightGray
+                    ), contentAlignment = Alignment.Center
             ) {
                 Icon(Icons.Default.Star, contentDescription = "Star", tint = White)
             }
@@ -168,7 +181,8 @@ fun CardPackage(modifier: Modifier = Modifier) {
                     .padding(horizontal = 16.dp)
             ) {
                 Text(
-                    text = "Gold Package", style = EventoTypography.h6.copy(
+                    text = if (important) "Gold Package" else "Silver Package",
+                    style = EventoTypography.h6.copy(
                         fontSize = EventoTypography.body2.fontSize,
                         color = EventoColors.onSecondary
                     )
