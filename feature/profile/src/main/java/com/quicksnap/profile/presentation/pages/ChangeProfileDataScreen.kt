@@ -116,6 +116,7 @@ fun ChangeProfileDataBody(goBack: () -> Unit) {
                 textStyle = EventoTypography.body2,
                 cursorColor = Primary,
             )
+            Spacer(modifier = Modifier.height(10.dp))
             EventoTextField(
                 modifier = Modifier
                     .clip(EventoShaped.small)
@@ -136,10 +137,12 @@ fun ChangeProfileDataBody(goBack: () -> Unit) {
                 textStyle = EventoTypography.body2,
                 cursorColor = Primary,
             )
+            Spacer(modifier = Modifier.height(10.dp))
             EventoTextField(
                 modifier = Modifier
                     .clip(EventoShaped.small)
                     .background(EventoColors.secondaryVariant),
+
                 value = "",
                 onChange = {},
                 paddingStart = 16.dp,
@@ -156,6 +159,7 @@ fun ChangeProfileDataBody(goBack: () -> Unit) {
                 textStyle = EventoTypography.body2,
                 cursorColor = Primary,
             )
+            Spacer(modifier = Modifier.height(10.dp))
             EventoTextField(
                 modifier = Modifier
                     .clip(EventoShaped.small)

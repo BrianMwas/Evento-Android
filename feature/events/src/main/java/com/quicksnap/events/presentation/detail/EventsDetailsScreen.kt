@@ -47,14 +47,13 @@ fun EventDetailsScreen(
 @Composable
 fun EventBody(goBack: () -> Unit, toOrderDetail: () -> Unit) {
     Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.BottomCenter) {
-        Column(modifier = Modifier.fillMaxSize()) {
+        Column(modifier = Modifier.fillMaxSize(), verticalArrangement = Arrangement.Top) {
             Image(
                 painter = painterResource(id = R.drawable.event_placeholder),
                 contentDescription = "Concert detail image",
                 contentScale = ContentScale.Crop,
-                modifier = Modifier.weight(0.65f)
+                modifier = Modifier.height(200.dp).fillMaxWidth()
             )
-            Spacer(modifier = Modifier.weight(0.55f))
         }
 
         Card(

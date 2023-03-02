@@ -9,6 +9,8 @@ import androidx.compose.material.Icon
 import androidx.compose.material.IconButton
 import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Email
+import androidx.compose.material.icons.filled.Lock
 import androidx.compose.material.icons.outlined.Visibility
 import androidx.compose.material.icons.outlined.VisibilityOff
 import androidx.compose.runtime.*
@@ -39,7 +41,10 @@ fun LoginForm(
     var isPasswordHidden by remember {
         mutableStateOf(true)
     }
-    Column(modifier = Modifier.padding(horizontal = 32.dp), horizontalAlignment = Alignment.CenterHorizontally) {
+    Column(
+        modifier = Modifier.padding(horizontal = 32.dp),
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
         EventoTextField(
             modifier = Modifier
                 .clip(EventoShaped.small)
@@ -55,7 +60,15 @@ fun LoginForm(
             placeholder = "Email", placeholderStyle = EventoTypography.body1.copy(
                 Gray
             ),
-            paddingStart = 27.dp,
+            prefix = {
+                Icon(
+                    Icons.Default.Email,
+                    contentDescription = "Email icon",
+                    tint = Gray,
+                    modifier = Modifier.padding(start = 8.dp)
+                )
+            },
+            paddingStart = 8.dp,
             textStyle = EventoTypography.body1,
             cursorColor = EventoTypography.body1.color
         )
@@ -76,7 +89,7 @@ fun LoginForm(
             placeholderStyle = EventoTypography.body1.copy(
                 Gray
             ),
-            paddingStart = 27.dp,
+            paddingStart = 8.dp,
             textStyle = EventoTypography.body1,
             cursorColor = EventoTypography.body1.color,
             suffix = {
@@ -84,18 +97,37 @@ fun LoginForm(
                     isPasswordHidden = !isPasswordHidden
                 }) {
                     if (isPasswordHidden) {
-                        Icon(Icons.Outlined.Visibility, contentDescription = stringResource(R.string.show_password), tint = Gray)
+                        Icon(
+                            Icons.Outlined.Visibility,
+                            contentDescription = stringResource(R.string.show_password),
+                            tint = Gray,
+                        )
                     } else {
-                        Icon(Icons.Outlined.VisibilityOff, contentDescription = stringResource(R.string.hide_password), tint = Gray)
+                        Icon(
+                            Icons.Outlined.VisibilityOff,
+                            contentDescription = stringResource(R.string.hide_password),
+                            tint = Gray,
+                        )
                     }
                 }
+            },
+            prefix = {
+                Icon(
+                    Icons.Default.Lock,
+                    contentDescription = "Lock icon",
+                    tint = Gray,
+                    modifier = Modifier.padding(start = 8.dp),
+                )
             },
             visualTransformation = if (isPasswordHidden) PasswordVisualTransformation() else VisualTransformation.None
         )
         Spacer(modifier = Modifier.height(20.dp))
-        Text(text = "Forgot password?", textAlign = TextAlign.Center, modifier = Modifier.clickable {
-            forgotPassword()
-        })
+        Text(
+            text = "Forgot password?",
+            textAlign = TextAlign.Center,
+            modifier = Modifier.clickable {
+                forgotPassword()
+            })
         Spacer(modifier = Modifier.height(20.dp))
         ExpandedButton(
             background = Primary,
@@ -112,7 +144,8 @@ fun LoginForm(
                     strokeWidth = 2.5.dp
                 )
             } else {
-                Text(text = "Login",
+                Text(
+                    text = "Login",
                     style = EventoTypography.body1.copy(
                         color = Color.White
                     )
