@@ -8,6 +8,10 @@ import androidx.compose.material.Icon
 import androidx.compose.material.IconButton
 import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Email
+import androidx.compose.material.icons.filled.Lock
+import androidx.compose.material.icons.filled.Mail
+import androidx.compose.material.icons.filled.Person
 import androidx.compose.material.icons.outlined.Visibility
 import androidx.compose.material.icons.outlined.VisibilityOff
 import androidx.compose.runtime.*
@@ -50,11 +54,14 @@ fun SignupForm(
             keyboardOptions = KeyboardOptions(
                 keyboardType = KeyboardType.Text
             ),
-            paddingStart = 27.dp,
+            paddingStart = 8.dp,
             placeholder = "Username",
             placeholderStyle = EventoTypography.body1.copy(
                 Gray
             ),
+            prefix = {
+                     Icon(Icons.Default.Person, contentDescription = "Username", tint = Gray, modifier = Modifier.padding(start = 8.dp))
+            },
             textStyle = EventoTypography.body1,
             cursorColor = EventoTypography.body1.color
         )
@@ -68,11 +75,14 @@ fun SignupForm(
             onChange = {
                 handleEvent(AuthenticationEvent.EmailChanged(it))
             },
-            paddingStart = 27.dp,
+            paddingStart = 8.dp,
             placeholder = "Email Address",
             placeholderStyle = EventoTypography.body1.copy(
                 Gray
             ),
+            prefix = {
+                Icon(Icons.Default.Mail, contentDescription = "Username", tint = Gray, modifier = Modifier.padding(start = 8.dp))
+            },
             keyboardOptions = KeyboardOptions(
                 keyboardType = KeyboardType.Email
             ),
@@ -92,7 +102,10 @@ fun SignupForm(
             keyboardOptions = KeyboardOptions(
                 keyboardType = KeyboardType.Password
             ),
-            paddingStart = 27.dp,
+            prefix = {
+                Icon(Icons.Default.Lock, contentDescription = "Username", tint = Gray, modifier = Modifier.padding(start = 8.dp))
+            },
+            paddingStart = 8.dp,
             placeholder = "Password",
             placeholderStyle = EventoTypography.body1.copy(
                 Gray
