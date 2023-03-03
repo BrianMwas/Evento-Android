@@ -81,7 +81,7 @@ fun SignUpScreen(
                         clip = true
                         shape = TrapeziumShape()
                     }
-                    .background(EventoColors.primary),
+                    .background(EventoColors.surface),
                     contentAlignment = Alignment.BottomCenter
                 ) {
                     Column (

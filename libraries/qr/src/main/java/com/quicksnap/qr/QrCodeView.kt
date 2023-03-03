@@ -30,6 +30,7 @@ fun QrCodeView(content: String, modifier: Modifier = Modifier, qrCodeProperties:
     val bitmap = rememberSaveable {
         mutableStateOf<Bitmap?>(null)
     }
+
     AndroidView(
         modifier = modifier.defaultMinSize(48.dp),
         factory = { context ->

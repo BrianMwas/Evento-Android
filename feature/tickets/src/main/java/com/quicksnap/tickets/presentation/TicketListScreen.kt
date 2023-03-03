@@ -33,7 +33,7 @@ fun TicketListScreen(
     ),
 ) {
     TicketListBody(
-        modifier = modifier,
+        modifier = modifier.fillMaxSize(),
         toEventDetail = { eventId ->
             navigationProvider.openEventDetail(eventId)
         },
@@ -47,7 +47,7 @@ fun TicketListBody(
     toEventDetail: (String) -> Unit,
     rebookEvent: () -> Unit,
 ) {
-    Box(
+    Surface(
         modifier = modifier
             .background(EventoColors.background)
             .statusBarsPadding()
