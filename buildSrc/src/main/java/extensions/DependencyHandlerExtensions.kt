@@ -15,6 +15,7 @@ fun DependencyHandler.releaseImplementation(dependencyNotation: Any): Dependency
 * */
 fun DependencyHandler.debugImplementation(dependencyNotation: Any): Dependency? = add("testImplementation", dependencyNotation)
 
+
 /* Add dependency to the implementation dependency configuration
 * @dependencyNotation is the dependency
 * @return the dependency
@@ -71,8 +72,7 @@ fun DependencyHandler.addComposeDependency() {
     implementation(ComposeLibs.ViewModel)
     implementation(ComposeLibs.Preview)
     implementation(AccompanistLib.SystemUIController)
-
-    debugImplementation(ComposeLibs.UITooling)
+    implementation(ComposeLibs.UITooling)
     androidTestImplementation(AndroidTestLib.JUnitCompose)
     debugImplementation(ComposeLibs.Manifest)
 }
@@ -90,17 +90,20 @@ fun DependencyHandler.addTestDependencies() {
 }
 
 fun DependencyHandler.addModuleDependency() {
-    implementation(project(mapOf("path" to ":feature:authentication")))
     implementation(project(mapOf("path" to ":feature:home")))
     implementation(project(mapOf("path" to ":feature:onboarding")))
     implementation(project(mapOf("path" to ":feature:tickets")))
+    implementation(project(mapOf("path" to ":feature:events")))
+    implementation(project(mapOf("path" to ":domain")))
     implementation(project(mapOf("path" to ":feature:profile")))
+    implementation(project(mapOf("path" to ":feature:welcome")))
     implementation(project(mapOf("path" to ":common:theme")))
     implementation(project(mapOf("path" to ":libraries:testutils")))
+    implementation(project(mapOf("path" to ":libraries:framework")))
+    implementation(project(mapOf("path" to ":common:provider")))
+    implementation(project(mapOf("path" to ":feature:splash")))
+    implementation(project(mapOf("path" to ":libraries:eventoframework")))
 }
-
-val DependencyHandler.FEATURE_AUTHENTICATION
-    get() = implementation(project(mapOf("path" to ":feature:authentication")))
 
 val DependencyHandler.FEATURE_HOME
     get() = implementation(project(mapOf("path" to ":feature:home")))
@@ -114,8 +117,30 @@ val DependencyHandler.FEATURE_TICKETS
 val DependencyHandler.FEATURE_PROFILE
     get() = implementation(project(mapOf("path" to ":feature:profile")))
 
+val DependencyHandler.FEATURE_EVENTS
+    get() = implementation(project(mapOf("path" to ":feature:events")))
+
+val DependencyHandler.QR_CODE
+    get() = implementation(project(mapOf("path" to ":libraries:qr")))
+
+val DependencyHandler.PROVIDER
+    get() = implementation(project(mapOf("path" to ":common:provider")))
+
+val DependencyHandler.FRAMEWORK
+    get() = implementation(project(mapOf("path" to ":libraries:framework")))
+
+val DependencyHandler.EVENTOFRAMEWORK
+    get() = implementation(project(mapOf("path" to ":libraries:eventoframework")))
+
+val DependencyHandler.DOMAIN
+    get() = implementation(project(mapOf("path" to ":domain")))
+
+val DependencyHandler.REPOSITORY
+    get() = implementation(project(mapOf("path" to ":data:repository")))
+
 val DependencyHandler.THEME
     get() = implementation(project(mapOf("path" to ":common:theme")))
+
 
 val DependencyHandler.TEST
     get() = implementation(project(mapOf("path" to ":libraries:testutils")))

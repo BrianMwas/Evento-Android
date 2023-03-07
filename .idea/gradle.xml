@@ -7,20 +7,31 @@
         <option name="testRunner" value="GRADLE" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="gradleJvm" value="11" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/buildSrc" />
             <option value="$PROJECT_DIR$/common" />
+            <option value="$PROJECT_DIR$/common/provider" />
             <option value="$PROJECT_DIR$/common/theme" />
+            <option value="$PROJECT_DIR$/data" />
+            <option value="$PROJECT_DIR$/data/model" />
+            <option value="$PROJECT_DIR$/data/repository" />
+            <option value="$PROJECT_DIR$/domain" />
             <option value="$PROJECT_DIR$/feature" />
-            <option value="$PROJECT_DIR$/feature/authentication" />
+            <option value="$PROJECT_DIR$/feature/events" />
             <option value="$PROJECT_DIR$/feature/home" />
             <option value="$PROJECT_DIR$/feature/onboarding" />
             <option value="$PROJECT_DIR$/feature/profile" />
+            <option value="$PROJECT_DIR$/feature/splash" />
             <option value="$PROJECT_DIR$/feature/tickets" />
+            <option value="$PROJECT_DIR$/feature/welcome" />
             <option value="$PROJECT_DIR$/libraries" />
+            <option value="$PROJECT_DIR$/libraries/eventoframework" />
+            <option value="$PROJECT_DIR$/libraries/framework" />
+            <option value="$PROJECT_DIR$/libraries/qr" />
             <option value="$PROJECT_DIR$/libraries/testutils" />
           </set>
         </option>

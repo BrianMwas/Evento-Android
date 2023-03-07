@@ -9,6 +9,9 @@ plugins {
 
 android {
     addComposeConfig()
+    packagingOptions {
+        resources.excludes.add("META-INF/*")
+    }
 }
 
 dependencies {

@@ -14,10 +14,19 @@ object Versions {
     const val coil = "2.2.2"
     const val accompanist = "0.28.0"
     const val compose = "1.3.2"
+    const val composeTooling = "1.3.3"
+    const val hiltCompose = "1.0.0"
     const val destination = "1.7.32-beta"
     const val accompanistSystUiController = "0.29.0-alpha"
     const val hilt = "2.44"
     const val composeActivity = "1.6.1"
     const val composeLifecycleViewModel = "2.5.1"
+    const val dataStore = "1.0.0"
+    const val accompanistPager = "0.29.1-alpha"
+    const val BarCode = "3.5.1"
+    const val cloudy = "0.1.2"
+    const val firebaseBom = "31.2.2"
+
+    const val facebook ="16.0.0"
 }
 

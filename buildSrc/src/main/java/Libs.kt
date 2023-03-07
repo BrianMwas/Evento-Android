@@ -8,6 +8,19 @@ object SupportLibs {
     const val CoroutineAndroid = "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4"
     const val LifecycleRuntime = "androidx.lifecycle:lifecycle-runtime-ktx:2.5.1"
     const val ActivityKtx = "androidx.activity:activity-ktx:1.6.1"
+    const val Splashscreen = "androidx.core:core-splashscreen:1.0.0"
+    const val DataStore = "androidx.datastore:datastore-preferences:${Versions.dataStore}"
+}
+
+object Firebase {
+    const val Bom = "com.google.firebase:firebase-bom:${Versions.firebaseBom}"
+    const val auth = "com.google.firebase:firebase-auth-ktx"
+    const val firestore = "com.google.firebase:firebase-firestore-ktx"
+    const val storage = "com.google.firebase:firebase-storage-ktx"
+    const val messaging = "com.google.firebase:firebase-messaging-ktx"
+    const val crashlytics = "com.google.firebase:firebase-crashlytics-ktx"
+    const val analytics = "com.google.firebase:firebase-analytics-ktx"
+    const val facebook = "com.facebook.android:facebook-login:latest.release"
 }
 
 object ComposeLibs {
@@ -22,10 +35,13 @@ object ComposeLibs {
     const val MaterialExtended = "androidx.compose.material:material-icons-extended"
     const val WindowSize = "androidx.compose.material3:material3-window-size-class"
     const val ViewModel = "androidx.lifecycle:lifecycle-viewmodel-compose:${Versions.composeLifecycleViewModel}"
-    const val UITooling = "androidx.compose.ui:ui-tooling"
-    const val Manifest = "androidx.compose.ui:ui-test-manifest"
-    const val Preview = "androidx.compose.ui:ui-tooling-preview"
+    const val UITooling = "androidx.compose.ui:ui-tooling:${Versions.composeTooling}"
+    const val Manifest = "androidx.compose.ui:ui-test-manifest:${Versions.composeTooling}"
+    const val Preview = "androidx.compose.ui:ui-tooling-preview:${Versions.composeTooling}"
     const val Coil = "io.coil-kt:coil-compose:${Versions.coil}"
+    const val CoilBase = "io.coil-kt:coil:${Versions.coil}"
+    const val BarCode = "com.google.zxing:core:${Versions.BarCode}"
+    const val Blur = "com.github.skydoves:cloudy:${Versions.cloudy}"
 }
 
 object NavigationLib {
@@ -37,12 +53,14 @@ object NavigationLib {
 
 object AccompanistLib {
     const val SystemUIController = "com.google.accompanist:accompanist-systemuicontroller:${Versions.accompanistSystUiController}"
+    const val Pager = "com.google.accompanist:accompanist-pager:${Versions.accompanistPager}"
+    const val PagerIndicators = "com.google.accompanist:accompanist-pager-indicators:${Versions.accompanistPager}"
 }
 
 object DaggerHilt {
     const val Android = "com.google.dagger:hilt-android:${Versions.hilt}"
     const val Compiler = "com.google.dagger:hilt-android-compiler:${Versions.hilt}"
-    const val Compose = "androidx.hilt:hilt-navigation-compose:${Versions.compose}"
+    const val Compose = "androidx.hilt:hilt-navigation-compose:${Versions.hiltCompose}"
 }
 
 object TestingLib {

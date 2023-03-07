@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "587646468641",
+    "project_id": "evento-c2947",
+    "storage_bucket": "evento-c2947.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:587646468641:android:55cf4912e42e7728c79960",
+        "android_client_info": {
+          "package_name": "com.quicksnap.evento"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "587646468641-j5hnllpq7pk0jnu4tdgljivmp1dhl3mf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDMPdSXxNhF50rECHQ2SmgSC7Uc93F55zE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "587646468641-j5hnllpq7pk0jnu4tdgljivmp1dhl3mf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
