@@ -3,7 +3,7 @@ package com.quicksnap.framework.usecase
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flowOn
-import okhttp3.Dispatcher
+
 
 abstract class ReturnUseCase<in Params, ReturnType> where ReturnType: Any {
     protected abstract  suspend fun execute(params: Params): Flow<ReturnType>
