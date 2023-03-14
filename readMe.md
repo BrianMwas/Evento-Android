@@ -3,7 +3,8 @@
 
 <h1 align="center">Evento android</h1>
 
-Android Clean Architecture in Evento is a sample project that presents modern, approach to [Android](https://www.android.com/) application development using [Kotlin](https://kotlinlang.org/) and latest tech-stack.
+Android Clean Architecture in 
+Evento is a sample project that presents modern, approach to [Android](https://www.android.com/) application development using [Kotlin](https://kotlinlang.org/) and latest tech-stack.
 
 An android app built using Kotlin that allows people to find events and pay for them.
 
@@ -97,33 +98,16 @@ Components of domain layer include:
 The ```features``` layer contains components involved in showing information to the user. The main part of this layer are the views(activity, compose) and ViewModels.
 
 ## Demo Screenshots
+![Onboarding One](screenshots/onboarding_one.png)
+![Onboarding page two](screenshots/onboarding_two.png)
+![Onboarding page three](screenshots/onboarding_three.png)
 
-| Mode  | Splash                                            | OnBoarding - Intro                                    |
-|-------|---------------------------------------------------|-------------------------------------------------------|
-| Light | <img src="art/screenshots/splash.png" width="250">|<img src="art/screenshots/intro.png" width="250">      |
-| Dark  | <img src="art/screenshots/splash.png" width="250">|<img src="art/screenshots/intro-dark.png" width="250"> |
-
-
-| Mode  | Characters                                                   | Character  Favorites                                            | Character Detail                                                 |
-|-------|--------------------------------------------------------------|-----------------------------------------------------------------|------------------------------------------------------------------|
-| Light | <img src="art/screenshots/characters.png" width="250">       | <img src="art/screenshots/characters-favs.png" width="250">     | <img src="art/screenshots/character-detail.png" width="250">     |
-| Dark  | <img src="art/screenshots/characters-dark.png" width="250">  | <img src="art/screenshots/characters-favs-dark.png" width="250">| <img src="art/screenshots/character-detail-dark.png" width="250">|
-
-| Mode  | Episodes                                                   | Episode  Favorites                                            | Episode Detail                                                 |
-|-------|------------------------------------------------------------|---------------------------------------------------------------|----------------------------------------------------------------|
-| Light | <img src="art/screenshots/episodes.png" width="250">       | <img src="art/screenshots/episodes-favs.png" width="250">     | <img src="art/screenshots/episode-detail.png" width="250">     |
-| Dark  | <img src="art/screenshots/episodes-dark.png" width="250">  | <img src="art/screenshots/episodes-favs-dark.png" width="250">| <img src="art/screenshots/episode-detail-dark.png" width="250">|
-
-| Mode  | Locations                                                  | Location  Favorites                                            | Location Detail                                                 |
-|-------|------------------------------------------------------------|----------------------------------------------------------------|----------------------------------------------------------------|
-| Light | <img src="art/screenshots/locations.png" width="250">      | <img src="art/screenshots/locations-favs.png" width="250">     | <img src="art/screenshots/location-detail.png" width="250">     |
-| Dark  | <img src="art/screenshots/locations-dark.png" width="250"> | <img src="art/screenshots/locations-favs-dark.png" width="250">| <img src="art/screenshots/location-detail-dark.png" width="250">|
-
-| Mode  | Settings                                                  | About                                                 | Language                                                 |
-|-------|-----------------------------------------------------------|-------------------------------------------------------|----------------------------------------------------------|
-| Light | <img src="art/screenshots/settings.png" width="250">      | <img src="art/screenshots/about.png" width="250">     | <img src="art/screenshots/language.png" width="250">     |
-| Dark  | <img src="art/screenshots/settings-dark.png" width="250"> | <img src="art/screenshots/about-dark.png" width="250">| <img src="art/screenshots/language-dark.png" width="250">|
-
+![Login Page](screenshots/login_page.png)
+![Sign Up page](screenshots/signup_page.png)
+![Home page](screenshots/events_page.png)
+![Order details page](screenshots/order_detail_page.png)
+![Help desk page](screenshots/helpdesk_page.png)
+![Profile page](screenshots/profile_page.png)
 
 # Tech Stacks
 This project uses many of the popular libraries, plugins and tools of the android ecosystem.
@@ -154,7 +138,6 @@ This project uses many of the popular libraries, plugins and tools of the androi
     - [Lifecycle](https://developer.android.com/topic/libraries/architecture/lifecycle) - Perform actions in response to a change in the lifecycle status of another component, such as activities and fragments.
     - [ViewModel](https://developer.android.com/topic/libraries/architecture/viewmodel) - Designed to store and manage UI-related data in a lifecycle conscious way. The ViewModel class allows data to survive configuration changes such as screen rotations.
     - [Room](https://developer.android.com/training/data-storage/room) - Provides an abstraction layer over SQLite used for offline data caching.
-    - [Paging3](https://developer.android.com/topic/libraries/architecture/paging/v3-overview) - The Paging Library makes it easier for you to load data gradually and gracefully within your app's [RecyclerView](https://developer.android.com/reference/androidx/recyclerview/widget/RecyclerView).
 
 - [Dagger Hilt](https://dagger.dev/hilt/) - Dependency Injection library.
 - [Google-KSP](https://github.com/google/ksp/) - Kotlin Symbol Processing API
@@ -171,10 +154,5 @@ This project uses many of the popular libraries, plugins and tools of the androi
 
 ### Plugin
 - [Check-Dependency-Versions](https://github.com/ben-manes/gradle-versions-plugin) - make easy to determine which dependencies have updates.
-
-
-
-
-
 
 
