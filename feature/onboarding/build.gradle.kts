@@ -5,6 +5,7 @@ plugins {
     id("commons.android-feature")
     id("commons.android-comp")
     id("com.google.devtools.ksp")
+    id("org.jetbrains.kotlin.android")
 }
 
 ksp {
@@ -13,6 +14,7 @@ ksp {
 }
 
 dependencies {
+    implementation("androidx.core:core-ktx:+")
     THEME
     addNavigationDependency()
 }

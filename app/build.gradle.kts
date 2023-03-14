@@ -70,6 +70,7 @@ android.applicationVariants.all {
 }
 
 dependencies {
+    implementation("androidx.core:core-ktx:+")
     // Module Dependencies
     addModuleDependency()
     // Common

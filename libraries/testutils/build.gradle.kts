@@ -39,7 +39,7 @@ dependencies {
     api("androidx.test.espresso:espresso-core:3.5.1")
     api("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.4")
     api("com.google.truth:truth:1.1.3")
-    api("org.robolectric:robolectric:4.7.3")
+    api("org.robolectric:robolectric:4.8.1")
     api("app.cash.turbine:turbine:0.7.0")
     api("io.mockk:mockk:1.13.3")
     api("org.hamcrest:hamcrest-library:2.2")
@@ -48,4 +48,5 @@ dependencies {
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
     implementation("com.squareup.retrofit2:converter-moshi:2.9.0")
     implementation("com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.6")
+    implementation("androidx.core:core-ktx:+")
 }

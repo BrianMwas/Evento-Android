@@ -22,5 +22,6 @@ dependencies {
     /// Generate a bar code
     implementation(ComposeLibs.BarCode)
     implementation(ComposeLibs.MaterialExtended)
+    implementation("androidx.core:core-ktx:+")
     addNavigationDependency()
 }

@@ -8,9 +8,11 @@ plugins {
     id("commons.android-comp")
     id("commons.dagger-hilt")
     id("com.google.devtools.ksp")
+    id("org.jetbrains.kotlin.android")
 }
 
 dependencies {
+    implementation("androidx.core:core-ktx:+")
     THEME
     FRAMEWORK
     EVENTOFRAMEWORK

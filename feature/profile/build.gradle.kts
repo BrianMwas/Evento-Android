@@ -7,6 +7,7 @@ plugins {
     id("commons.android-feature")
     id("commons.android-comp")
     id("com.google.devtools.ksp")
+    id("org.jetbrains.kotlin.android")
 }
 
 ksp {
@@ -21,5 +22,6 @@ dependencies {
 
     implementation(ComposeLibs.Blur)
     implementation(ComposeLibs.MaterialExtended)
+    implementation("androidx.core:core-ktx:+")
     addNavigationDependency()
 }

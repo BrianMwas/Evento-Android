@@ -1,5 +1,6 @@
 object ConfigData {
     const val compileSdkVersion = 33
+    const val compileSdkVersionString = "android-T"
     const val buildToolsVersion = "30.0.3"
     const val googleServices = "4.3.15"
     const val minSdkVersion = 24
