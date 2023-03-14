@@ -98,7 +98,7 @@ The ```features``` layer contains components involved in showing information to 
 <img src="screenshots/onboarding_three.png" width="200" title="Onboarding three" />
 <img src="screenshots/login_page.png" width="200" title="Login page" />
 <img src="screenshots/signup_page.png" width="200" title="Sign up page" />
-<img src="screenshots/home_page.png" width="200" title="Home page" />
+<img src="screenshots/events_page.png" width="200" title="Home page" />
 <img src="screenshots/order_detail_page.png" width="200" title="Order details page" />
 <img src="screenshots/helpdesk_page.png" width="200" title="Help desk page" />
 <img src="screenshots/profile_page.png" width="200" title="Profile page" />
