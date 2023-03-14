@@ -17,15 +17,12 @@ A well planned architecture is extremely important for an app to scale and all a
 
 Clean architecture was proposed by [Robert C. Martin](https://en.wikipedia.org/wiki/Robert_C._Martin) in 2012 in the [Clean Code Blog](http://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html) and it follow the SOLID principle.
 
-<p align="center"><img src="art/clean_arch.jpeg" alt="Clean Architecture"></p>
-
 The circles represent different layers of your app. Note that:
 
 - The center circle is the most abstract, and the outer circle is the most concrete. This is called the [Abstraction Principle](https://en.wikipedia.org/wiki/Abstraction_principle_(computer_programming)). The Abstraction Principle specifies that inner circles should contain business logic, and outer circles should contain implementation details.
 
 - Another principle of Clean Architecture is the [Dependency Inversion](https://en.wikipedia.org/wiki/Dependency_inversion_principle). This rule specifies that each circle can depend only on the nearest inward circle ie. low-level modules do not depend on high-level modules but the other way around.
 
-<p align="center"><img src="art/architecture.png" alt="Clean Architecture Diagram"></p>
 
 ### Why Clean Architecture?
 - ```Loose coupling between the code``` - The code can easily be modified without affecting any or a large part of the app's codebase thus easier to scale the application later on.
@@ -45,9 +42,6 @@ The circles represent different layers of your app. Note that:
 - [__Dependency Inversion__](https://en.wikipedia.org/wiki/Dependency_inversion_principle): Components should depend on abstractions rather than concrete implementations. Also higher level modules shouldn’t depend on lower level modules.
 
 ## Layers
-
-### Project Structure
-<p align="center"><img src="art/project.png" alt="Project Structure" width="500"></p>
 
 ### BuildSrc
 The ```buildSrc``` layer is responsible for dependency management. It control and manage all dependencies in one place with Kotlin.
@@ -98,16 +92,19 @@ Components of domain layer include:
 The ```features``` layer contains components involved in showing information to the user. The main part of this layer are the views(activity, compose) and ViewModels.
 
 ## Demo Screenshots
-![Onboarding One](screenshots/onboarding_one.png)
-![Onboarding page two](screenshots/onboarding_two.png)
-![Onboarding page three](screenshots/onboarding_three.png)
+<p align="center">
+<img src="screenshots/onboarding_one.png" width="200" title="Onboarding one" />
+<img src="screenshots/onboarding_two.png" width="200" title="Onboarding two" />
+<img src="screenshots/onboarding_three.png" width="200" title="Onboarding three" />
+<img src="screenshots/login_page.png" width="200" title="Login page" />
+<img src="screenshots/signup_page.png" width="200" title="Sign up page" />
+<img src="screenshots/home_page.png" width="200" title="Home page" />
+<img src="screenshots/order_details_page.png" width="200" title="Order details page" />
+<img src="screenshots/helpdesk_page.png" width="200" title="Help desk page" />
+<img src="screenshots/profile_page.png" width="200" title="Profile page" />
+</p>
+>
 
-![Login Page](screenshots/login_page.png)
-![Sign Up page](screenshots/signup_page.png)
-![Home page](screenshots/events_page.png)
-![Order details page](screenshots/order_detail_page.png)
-![Help desk page](screenshots/helpdesk_page.png)
-![Profile page](screenshots/profile_page.png)
 
 # Tech Stacks
 This project uses many of the popular libraries, plugins and tools of the android ecosystem.
